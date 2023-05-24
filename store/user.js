@@ -6,7 +6,6 @@ import {} from "../utils/store/getter.names";
 import {} from "~/utils/store/namespace.names";
 import {} from "../utils/utils";
 import {} from "../utils/store/endpoints";
-import {} from "../utils/web3Modal";
 
 export const state = () => ({});
 

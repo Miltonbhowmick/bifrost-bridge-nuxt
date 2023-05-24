@@ -21,7 +21,11 @@ import {} from "../utils/store/mutation.names";
 	name: "Index",
 	components: {},
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+	mounted() {
+		console.log("======", this.$config.HOST);
+	}
+}
 </script>
 
 <style scoped lang="scss"></style>

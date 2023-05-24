@@ -2,7 +2,6 @@ export default {
 	// server: {
 	// 	host: "0.0.0.0", // default: localhost
 	// },
-	loading: "components/loading.vue",
 	target: "server",
 	head: {
 		title: "Home",
@@ -56,7 +55,7 @@ export default {
 			},
 		],
 		link: [
-			{ rel: "icon", type: "image/x-icon", href: "/vemate_favicon.png" },
+			{ rel: "icon", type: "image/x-icon", href: "/bifrost_favicon.png" },
 			{ rel: "stylesheet", href: "/css/bootstrap.min.css" },
 			{
 				rel: "stylesheet",
