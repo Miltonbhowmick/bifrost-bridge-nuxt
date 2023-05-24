@@ -1,0 +1,60 @@
+# variables:
+# GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - sudo chown -R gitlab-runner:gitlab-runner .
+
+after_script:
+  - sudo chown -R gitlab-runner:gitlab-runner .
+
+dev-build:
+  stage: build
+  script:
+    - docker build -f ./Dockerfile . -t bifrostfrontend:dev
+    - docker tag bifrostfrontend:dev registry.gitlab.com/vemate/bifrost/bifrostfrontend:dev
+    - docker push registry.gitlab.com/vemate/bifrost/bifrostfrontend:dev
+    - docker rmi registry.gitlab.com/vemate/bifrost/bifrostfrontend:dev
+  tags:
+    - docker
+    - build
+  only:
+    refs:
+      - main
+# production-build:
+#   stage: build
+#   script:
+#     - docker build -f ./Dockerfile . -t vemate-web:prod
+#     - docker tag vemate-web:prod registry.gitlab.com/vemate/vemate/vemate-web:prod
+#     - docker push registry.gitlab.com/vemate/vemate/vemate-web:prod
+#     - docker rmi registry.gitlab.com/vemate/vemate/vemate-web:prod
+#   tags:
+#     - docker
+#     - build
+#   only:
+#     refs:
+#       - amir
+
+# production:
+#   stage: deploy
+#   before_script:
+#     - mkdir -p ~/.ssh
+#     - cp -rv $PRODUCTION_DPK_AWS ~/.ssh/id_rsa_vemate_backend
+#     - chmod 600 ~/.ssh/id_rsa_vemate_backend
+#     - eval "$(ssh-agent -s)"
+#     - ssh-add ~/.ssh/id_rsa_vemate_backend
+#     - ssh-keyscan -H $PRODUCTION_SERVER_IP_AWS >> ~/.ssh/known_hosts
+#   script:
+#     - ssh root@$PRODUCTION_SERVER_IP_AWS "export COMPOSE_INTERACTIVE_NO_CLI=1 && cd /www/vemate && docker-compose pull webapp && docker-compose stop webapp && docker-compose up -d webapp; rm -r webapp/_nuxt/ &> /dev/null; docker cp vemate_webapp:/app/.nuxt/dist/client/ webapp/_nuxt; sleep 5s; export COMPOSE_INTERACTIVE_NO_CLI=0"
+#   tags:
+#     - docker
+#     - build
+#   only:
+#     refs:
+#       - amir
+#     variables:
+#       - $CI_COMMIT_MESSAGE =~ /deploy/
