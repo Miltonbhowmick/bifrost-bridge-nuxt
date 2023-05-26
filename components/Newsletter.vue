@@ -43,6 +43,7 @@ export default class Newsletter extends Vue {}
 <style scoped lang="scss">
 .newsletter-box {
     margin: 50px 0px;
+    padding: 0px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,9 +61,10 @@ export default class Newsletter extends Vue {}
     form {
         position: relative;
         margin-top: 10px;
+				width: 100%;
         input {
             padding: 10px 8px;
-            width: 45vw;
+            width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 8px;
             background: none;
