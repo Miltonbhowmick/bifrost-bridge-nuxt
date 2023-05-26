@@ -25,7 +25,7 @@
                     >
                 </li>
             </ul>
-            <ul class="navbar-nav flex-row gap-5 auth-links">
+            <ul class="navbar-nav flex-row gap-4 auth-links">
                 <li class="nav-item">
                     <a class="nav-link cursor-pointer text-capitalize">sign in</a>
                 </li>
