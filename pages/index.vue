@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Campaign />
         <Newsletter />
     </div>
 </template>
@@ -12,11 +13,13 @@ import {} from "../utils/store/action.names";
 import {} from "../utils/store/getter.names";
 import {} from "../utils/store/mutation.names";
 import Newsletter from "../components/Newsletter";
+import Campaign from "../components/Campaign";
 
 @Component({
     name: "Index",
     components: {
         Newsletter,
+        Campaign,
     },
 })
 export default class Index extends Vue {
