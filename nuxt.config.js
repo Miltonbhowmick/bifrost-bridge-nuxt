@@ -118,9 +118,18 @@ export default {
 	// 	middleware: "authenticated",
 	// },
 
-	buildModules: ["@nuxtjs/style-resources"],
+	buildModules: ["@nuxtjs/style-resources", "@nuxtjs/fontawesome"],
 
 	modules: ["@nuxtjs/axios", "@nuxtjs/dayjs", "cookie-universal-nuxt"],
+
+	fontawesome: {
+		component: "Fa",
+		suffix: false,
+		icons: {
+			solid: true,
+			brands: true,
+		},
+	},
 
 	dayjs: {
 		plugins: ["utc"],

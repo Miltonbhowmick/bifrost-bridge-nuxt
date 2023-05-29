@@ -43,25 +43,30 @@ export default class Newsletter extends Vue {}
 <style scoped lang="scss">
 .newsletter-box {
     margin: 50px 0px;
-    padding: 0px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
     .headline {
-        font-weight: 600;
-        font-size: 28px;
+        margin: 0px 300px;
+        font-weight: $section-headline-font-weight;
+        font-size: $section-headline-font-size;
+        line-height: $section-headline-line-height;
         color: $section-headline-text;
+        text-align: center;
     }
     .sub-headline {
-        font-weight: 400;
-        font-size: 18px;
+        margin: 0px 300px;
+        font-weight: $section-subheadline-font-weight;
+        font-size: $section-subheadline-font-size;
+        line-height: $section-subheadline-line-height;
         color: $section-subheadline-text;
+        text-align: center;
     }
     form {
         position: relative;
         margin-top: 10px;
-				width: 100%;
+        width: 50%;
         input {
             padding: 10px 8px;
             width: 100%;

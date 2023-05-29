@@ -2,6 +2,19 @@
 $inter-font: 'Poppins';
 $default-font-size: 14px;
 
+$section-headline-font-size: 30px;
+$section-subheadline-font-size: 18px;
+$section-headline-font-weight: 600;
+$section-subheadline-font-weight: 400;
+$section-headline-line-height: 38px;
+$section-subheadline-line-height: 24px;
+
+$rating-star-size: 22px;
+$quotes-font-size: 24px;
+$quotes-font-weight: 400;
+$owner-name-font-size: 20px;
+$owner-name-font-weight: 500;
+
 // Colors variables
 $bg-primary: #031B27;
 
@@ -18,8 +31,9 @@ $owner-price-text:  rgba(255, 255, 255, 0.8);
 $section-headline-text: #FFFFFF;
 $section-subheadline-text:  #E8E8E8;
 
+$rating-star-color: #FEC84B;
+
 $quotes-text: #D5D5D5;
-$reviewer-position-text: #B4C5CB;
 
 $information-box-headline-text: #FFFFFF;
 $information-box-subheadline-text: rgba(255, 255, 255, 0.7);
