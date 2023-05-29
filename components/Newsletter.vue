@@ -42,7 +42,7 @@ export default class Newsletter extends Vue {}
 
 <style scoped lang="scss">
 .newsletter-box {
-    margin: 50px 0px;
+    margin: 70px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
