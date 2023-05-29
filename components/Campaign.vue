@@ -1,11 +1,11 @@
 <template>
-    <div
-        class="container"
-        :style="{
-            backgroundImage: `url(${backgroundUrl})`,
-        }"
-    >
-        <div class="campaign">
+    <div class="container">
+        <div
+            class="campaign"
+            :style="{
+                backgroundImage: `url(${backgroundUrl})`,
+            }"
+        >
             <div class="info-box">
                 <h4 class="headline text-uppercase">are you ready?</h4>
                 <h3 class="sub-headline text-uppercase">
