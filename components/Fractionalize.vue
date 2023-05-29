@@ -148,7 +148,7 @@
         text-align: left;
     }
     .steps {
-        width: 100%;
+        width: 103%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
