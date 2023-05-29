@@ -1,5 +1,6 @@
 <template>
     <div>
+        <TopCollections />
         <FeedbackHistory />
         <Fractionalize />
         <Campaign />
@@ -18,6 +19,7 @@ import Newsletter from "../components/Newsletter";
 import Campaign from "../components/Campaign";
 import Fractionalize from "../components/Fractionalize";
 import FeedbackHistory from "../components/FeedbackHistory";
+import TopCollections from "../components/TopCollections";
 
 @Component({
     name: "Index",
@@ -25,7 +27,8 @@ import FeedbackHistory from "../components/FeedbackHistory";
         Newsletter,
         Campaign,
         Fractionalize,
-				FeedbackHistory,
+        FeedbackHistory,
+        TopCollections,
     },
 })
 export default class Index extends Vue {

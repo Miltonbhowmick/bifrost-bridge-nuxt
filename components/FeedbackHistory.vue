@@ -155,7 +155,12 @@
             }
         }
         .images {
-            // background: black;
+					display: grid;
+					grid-template-rows: auto;
+					grid-template-columns: 33% 33% 33%;
+					img{
+						object-fit: cover;
+					}
         }
     }
 }
