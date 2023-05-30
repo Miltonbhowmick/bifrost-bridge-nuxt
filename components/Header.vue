@@ -5,44 +5,52 @@
             'primary-bg': toggleNavBackground,
         }"
     >
-        <nav class="navbar container">
-            <NuxtLink class="navbar-brand" to="/"
-                ><img src="images/bifrost_logo.png" alt="bifrost-logo"
-            /></NuxtLink>
-            <ul class="navbar-nav flex-row gap-5 menu-links">
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize"
-                        >Discover</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize"
-                        >Collections</a
-                    >
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-row gap-4 auth-links">
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize"
-                        >sign in</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cursor-pointer text-capitalize"
-                        >sign up</a
-                    >
-                </li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <NuxtLink class="navbar-brand" to="/"
+                    ><img src="images/bifrost_logo.png" alt="bifrost-logo"
+                /></NuxtLink>
+                <ul class="navbar-nav flex-row gap-5 menu-links">
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >About</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >Discover</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >Collections</a
+                        >
+                    </li>
+                </ul>
+                <ul class="navbar-nav flex-row gap-4 auth-links">
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >sign in</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cursor-pointer text-capitalize"
+                            >sign up</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </template>
 
