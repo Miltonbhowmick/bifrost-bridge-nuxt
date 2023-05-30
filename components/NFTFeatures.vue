@@ -118,9 +118,10 @@ export default class NFTFeatures extends Vue {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 6px;
+				justify-content: space-between;
+        gap: 16px;
         .item {
-            flex-basis: 33%;
+            flex-basis: 32.5%;
             .details {
                 padding: 40px 30px;
                 height: 220px;
