@@ -26,7 +26,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="serial">#1</td>
+                            <td class="serial">
+                                <div class="content">#1</div>
+                            </td>
                             <td class="name">
                                 <div class="content">
                                     <img
@@ -37,18 +39,30 @@
                                     <span class="short">btc</span>
                                 </div>
                             </td>
-                            <td class="floor-price">$948.55</td>
+                            <td class="floor-price">
+                                <div class="content">$948.55</div>
+                            </td>
                             <td class="one-hour-percentage">
-                                <span class="increase">0.09%</span>
+                                <div class="content">
+                                    <span class="increase">0.09%</span>
+                                </div>
                             </td>
                             <td class="twenty-four-hour-percentage">
-                                <span class="decrease">0.09%</span>
+                                <div class="content">
+                                    <span class="decrease">0.09%</span>
+                                </div>
                             </td>
                             <td class="seven-day-percentage">
-                                <span class="increase">0.09%</span>
+                                <div class="content">
+                                    <span class="increase">0.09%</span>
+                                </div>
                             </td>
-                            <td class="volume">$34,235,345,876.00</td>
-                            <td class="last-seven-day">graph</td>
+                            <td class="volume">
+                                <div class="content">$34,235,345,876.00</div>
+                            </td>
+                            <td class="last-seven-day">
+                                <div class="content">graph</div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -74,16 +88,11 @@
                 border: none;
                 padding: 30px 25px;
             }
+            td {
+                background: rgba(59, 24, 119, 0.1);
+            }
             th {
                 background: rgba(255, 255, 255, 0.05);
-            }
-            tr {
-                &:nth-child(odd) {
-                    background: rgba(59, 24, 119, 0.1);
-                }
-                &:nth-child(even) {
-                    background: rgba(255, 255, 255, 0.05);
-                }
             }
 
             thead {
@@ -98,6 +107,21 @@
             }
             tbody {
                 tr {
+                    .serial,
+                    .name,
+                    .floor-price,
+                    .one-hour-percentage,
+                    .twenty-four-hour-percentage,
+                    .seven-day-percentage,
+                    .volume {
+                        .content {
+                            height: 30px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 10px;
+                        }
+                    }
                     .serial {
                         font-weight: 500;
                         font-size: 14px;
@@ -105,10 +129,6 @@
                     }
                     .name {
                         .content {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            gap: 10px;
                             img {
                             }
                             h6 {
@@ -136,6 +156,7 @@
                         font-weight: 400;
                         font-size: 14px;
                     }
+
                     .increase {
                         position: relative;
                         color: #16c784;
