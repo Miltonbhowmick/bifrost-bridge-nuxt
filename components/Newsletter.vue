@@ -19,11 +19,10 @@
             <div class="community-box">
                 <h4 class="social-headline">Join our Community</h4>
                 <ul class="social-links">
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">twitter</a>
+                    <li v-for="(item, index) in socialItems" :key="index">
+                        <a :href="item.href" target="_blank" rel="nofollow"
+                            ><img :src="item.imageSrc" :alt="item.alt"
+                        /></a>
                     </li>
                 </ul>
             </div>
@@ -37,7 +36,40 @@ import { Component, Vue } from "nuxt-property-decorator";
     name: "Newsletter",
     components: {},
 })
-export default class Newsletter extends Vue {}
+export default class Newsletter extends Vue {
+    socialItems = [
+        {
+            name: "twitter",
+            href: "#",
+            imageSrc: "images/socials/twitter.svg",
+            alt: "twitter",
+        },
+        {
+            name: "instagram",
+            href: "#",
+            imageSrc: "images/socials/instagram.svg",
+            alt: "instagram",
+        },
+        {
+            name: "linkedin",
+            href: "#",
+            imageSrc: "images/socials/linkedin.svg",
+            alt: "linkedin",
+        },
+        {
+            name: "discord",
+            href: "#",
+            imageSrc: "images/socials/discord.svg",
+            alt: "discord",
+        },
+        {
+            name: "telegram",
+            href: "#",
+            imageSrc: "images/socials/telegram.svg",
+            alt: "telegram",
+        },
+    ];
+}
 </script>
 
 <style scoped lang="scss">
@@ -95,7 +127,8 @@ export default class Newsletter extends Vue {}
         margin-top: 30px;
         .social-headline {
             font-weight: 600;
-            font-size: 24px;
+            font-size: 28px;
+            text-align: center;
             color: $section-headline-text;
         }
         .social-links {
