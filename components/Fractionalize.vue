@@ -13,94 +13,24 @@
             </h3>
             <h1 class="steps-title">Fractionalized your NFTs</h1>
             <div class="steps">
-                <div class="step-wrapper">
+                <div
+                    v-for="(step, index) in stepList"
+                    :key="index"
+                    class="step-wrapper"
+                >
                     <div class="step">
                         <div class="box">
                             <div class="grad-content">
                                 <div class="content">
                                     <div class="details">
-                                        <div class="serial">1</div>
-                                        <div class="title">Select an NFT</div>
-                                        <div class="description">
-                                            Choose an NFT that you want to
-                                            fractionalize. This NFT should have
-                                            a high value and be in high demand.
+                                        <div class="serial">
+                                            {{ index + 1 }}
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-wrapper">
-                    <div class="step">
-                        <div class="box">
-                            <div class="grad-content">
-                                <div class="content">
-                                    <div class="details">
-                                        <div class="serial">2</div>
-                                        <div class="title">Select an NFT</div>
-                                        <div class="description">
-                                            Choose an NFT that you want to
-                                            fractionalize. This NFT should have
-                                            a high value and be in high demand.
+                                        <div class="title">
+                                            {{ step.title }}
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-wrapper">
-                    <div class="step">
-                        <div class="box">
-                            <div class="grad-content">
-                                <div class="content">
-                                    <div class="details">
-                                        <div class="serial">2</div>
-                                        <div class="title">Select an NFT</div>
                                         <div class="description">
-                                            Choose an NFT that you want to
-                                            fractionalize. This NFT should have
-                                            a high value and be in high demand.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-wrapper">
-                    <div class="step">
-                        <div class="box">
-                            <div class="grad-content">
-                                <div class="content">
-                                    <div class="details">
-                                        <div class="serial">2</div>
-                                        <div class="title">Select an NFT</div>
-                                        <div class="description">
-                                            Choose an NFT that you want to
-                                            fractionalize. This NFT should have
-                                            a high value and be in high demand.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-wrapper">
-                    <div class="step">
-                        <div class="box">
-                            <div class="grad-content">
-                                <div class="content">
-                                    <div class="details">
-                                        <div class="serial">2</div>
-                                        <div class="title">Select an NFT</div>
-                                        <div class="description">
-                                            Choose an NFT that you want to
-                                            fractionalize. This NFT should have
-                                            a high value and be in high demand.
+                                            {{ step.description }}
                                         </div>
                                     </div>
                                 </div>
@@ -114,6 +44,54 @@
 </template>
 
 <script>
+import { Component, Vue } from "nuxt-property-decorator";
+@Component({
+    name: "Fractionalize",
+})
+export default class Fractionalize extends Vue {
+    stepList = [
+        {
+            title: "Select an NFT",
+            description:
+                "Choose an NFT that you want to fractionalize. This NFT should have a high value and be in high demand.",
+        },
+        {
+            title: "Sell fractional shares",
+            description:
+                "Decide how many fractional shares you want to create. Each share represents a percentage ownership of the NFT. The most common fraction sizes are 10%, 20%, or 25%.",
+        },
+        {
+            title: "Establish a Smart Contract",
+            description:
+                "Create a smart contract that will govern the fractionalization process. This contract will define the terms and conditions of the fractionalization, including the fraction size, pricing.",
+        },
+        {
+            title: "Deploy the Smart Contract",
+            description:
+                "Deploy the smart contract on a blockchain network. This contract will serve as a digital ledger that records the ownership of the fractional shares.",
+        },
+        {
+            title: "Mint fractional shares",
+            description:
+                "Use the smart contract to mint fractional shares of the NFT. Each share will be represented by a unique token that can be bought, sold, and traded.",
+        },
+        {
+            title: "Determine the Price",
+            description:
+                "Set a price for each fractional share based on the overall value of the NFT. This price will be determined by the market demand for the NFT and the number of shares available.",
+        },
+        {
+            title: "Sell fractional shares",
+            description:
+                "Sell the fractional shares to investors who are interested in owning a portion of the NFT. Investors can buy and sell shares on  secondary markets, just like with regular stocks.",
+        },
+        {
+            title: "Manage ownership",
+            description:
+                "The smart contract will manage the ownership of the fractional shares, and the owners will have voting rights to make decisions about the NFT, such as whether to sell it or hold onto it.",
+        },
+    ];
+}
 </script>
 
 <style scoped lang="scss">
@@ -155,6 +133,7 @@
                         content: "";
                         position: absolute;
                         right: 0;
+                        top: 48%;
                         transform: translate(0, -50%);
                         width: 20%;
                         height: 10px;
@@ -212,6 +191,7 @@
                         content: "";
                         position: absolute;
                         left: 0;
+                        top: 48%;
                         transform: translate(0, -50%);
                         width: 20%;
                         height: 10px;
@@ -300,7 +280,8 @@
             .step {
                 // Root of all boxes helps to make border gradient
                 width: 80%;
-                height: 100%;
+                // height is fixed because we will have 3 lines of description inside the box
+                height: 212px;
                 padding: 8px;
                 border-radius: 16px;
                 display: flex;
@@ -318,6 +299,7 @@
                         // Another div box to make a gradient border
                         width: 100%;
                         height: 100%;
+                        padding: 1px;
                         background: linear-gradient(
                             152.14deg,
                             rgba(255, 247, 42, 0.7) 9.96%,
@@ -330,8 +312,8 @@
                         align-items: center;
                         .content {
                             // This div box helps to make a gradient border combining with exact above class [.grad-content]
-                            width: 99%;
-                            height: 99%;
+                            width: 100%;
+                            height: 100%;
                             background: #0a1a1f;
                             border-radius: 8px;
                             .details {
