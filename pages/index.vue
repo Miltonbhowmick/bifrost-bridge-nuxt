@@ -1,6 +1,8 @@
 <template>
     <div>
+        <MarketData />
         <TopCollections />
+        <NFTFeatures />
         <FeedbackHistory />
         <Fractionalize />
         <Campaign />
@@ -20,6 +22,8 @@ import Campaign from "../components/Campaign";
 import Fractionalize from "../components/Fractionalize";
 import FeedbackHistory from "../components/FeedbackHistory";
 import TopCollections from "../components/TopCollections";
+import MarketData from "../components/MarketData";
+import NFTFeatures from "../components/NFTFeatures";
 
 @Component({
     name: "Index",
@@ -29,6 +33,8 @@ import TopCollections from "../components/TopCollections";
         Fractionalize,
         FeedbackHistory,
         TopCollections,
+        MarketData,
+        NFTFeatures,
     },
 })
 export default class Index extends Vue {

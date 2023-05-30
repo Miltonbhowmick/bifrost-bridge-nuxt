@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="fractionalize-box">
-            <h2 class="headline">
+            <h2 class="section-headline">
                 Unlock the Value of Your NFTs: Fractionalize and Maximize Your
                 Investment Potential
             </h2>
-            <h3 class="sub-headline">
+            <h3 class="section-sub-headline">
                 Our platform facilitates the fractionalization process, making
                 it simple and accessible for NFT owners. We handle the technical
                 complexities, such as smart contract
@@ -123,22 +123,6 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    .headline {
-        margin: 0px 300px;
-        font-weight: $section-headline-font-weight;
-        font-size: $section-headline-font-size;
-        line-height: $section-headline-line-height;
-        color: $section-headline-text;
-        text-align: center;
-    }
-    .sub-headline {
-        margin: 0px 300px;
-        font-weight: $section-subheadline-font-weight;
-        font-size: $section-subheadline-font-size;
-        line-height: $section-subheadline-line-height;
-        color: $section-subheadline-text;
-        text-align: center;
-    }
     .steps-title {
         width: 100%;
         margin: 80px 0px;

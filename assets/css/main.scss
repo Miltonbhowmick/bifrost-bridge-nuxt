@@ -40,3 +40,23 @@ ul {
 	text-decoration: underline;
 }
 
+.bg{
+	background: red;
+}
+
+.section-headline {
+	margin: 0px 300px;
+	font-weight: $section-headline-font-weight;
+	font-size: $section-headline-font-size;
+	line-height: $section-headline-line-height;
+	color: $section-headline-text;
+	text-align: center;
+}
+.section-sub-headline {
+	margin: 0px 300px;
+	font-weight: $section-subheadline-font-weight;
+	font-size: $section-subheadline-font-size;
+	line-height: $section-subheadline-line-height;
+	color: $section-subheadline-text;
+	text-align: center;
+}

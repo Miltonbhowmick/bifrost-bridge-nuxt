@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="feedback-box">
-            <h2 class="headline">
+            <h2 class="section-headline">
                 Words of Praise: Testimonials from Satisfied NFT Creators,
                 Collectors and Traders
             </h2>
-            <h3 class="sub-headline">
+            <h3 class="section-sub-headline">
                 We value the trust our customers place in us, and we
                 continuously strive to exceed their expectations. Our
                 testimonial section serves as a testament to our commitment to
@@ -77,22 +77,6 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    .headline {
-        margin: 0px 300px;
-        font-weight: $section-headline-font-weight;
-        font-size: $section-headline-font-size;
-        line-height: $section-headline-line-height;
-        color: $section-headline-text;
-        text-align: center;
-    }
-    .sub-headline {
-        margin: 0px 300px;
-        font-weight: $section-subheadline-font-weight;
-        font-size: $section-subheadline-font-size;
-        line-height: $section-subheadline-line-height;
-        color: $section-subheadline-text;
-        text-align: center;
-    }
     .client-history {
         margin: 100px 0px;
         display: flex;

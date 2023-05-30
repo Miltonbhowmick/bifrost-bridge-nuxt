@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="collection-box">
-            <h2 class="headline">
+            <h2 class="section-headline">
                 Top NFT Collections: Exploring the Most Coveted Digital Art and
                 Assets
             </h2>
-            <h3 class="sub-headline">
+            <h3 class="section-sub-headline">
                 It's important to conduct thorough research and exercise caution
                 when making investment decisions in the crypto market.
                 <a href="#" class="read-more-link">Read More</a>
@@ -77,22 +77,6 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    .headline {
-        margin: 0px 300px;
-        font-weight: $section-headline-font-weight;
-        font-size: $section-headline-font-size;
-        line-height: $section-headline-line-height;
-        color: $section-headline-text;
-        text-align: center;
-    }
-    .sub-headline {
-        margin: 0px 300px;
-        font-weight: $section-subheadline-font-weight;
-        font-size: $section-subheadline-font-size;
-        line-height: $section-subheadline-line-height;
-        color: $section-subheadline-text;
-        text-align: center;
-    }
     .title-box {
         margin: 70px 0px 50px 0px;
         width: 100%;
