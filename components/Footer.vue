@@ -3,8 +3,8 @@
         <footer class="footer">
             <div class="box">
                 <div class="col">
-                    <a
-                        ><img src="images/bifrost-logo.png" alt="bifrost-logo"
+                    <a href="#" class="company"
+                        ><img src="images/bifrost_logo_half.png" alt="bifrost-logo"
                     /></a>
                     <p class="description">
                         Vemate is the most versatile and dynamic application on
@@ -79,6 +79,11 @@ export default class Footer extends Vue {}
             &:first-child {
                 flex-basis: 30%;
             }
+						.company{
+							img{
+								width: 20%;
+							}
+						}
             .description {
                 font-weight: 400;
                 font-size: 14px;
