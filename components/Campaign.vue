@@ -35,6 +35,7 @@ export default class Campaign extends Vue {
 <style scoped lang="scss">
 .campaign {
     position: relative;
+		margin: 100px 0px;
     .info-box {
         margin: 50px 0px;
         padding: 80px 150px 195px 150px;
