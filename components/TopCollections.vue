@@ -15,52 +15,22 @@
                 <a href="#" class="read-more-link">View All</a>
             </div>
             <ul class="collection-list">
-                <li class="item">
-                    <h5 class="serial">1</h5>
+                <li
+                    v-for="(item, index) in collectionItems"
+                    :key="index"
+                    class="item"
+                >
+                    <h5 class="serial">{{ index + 1 }}</h5>
                     <img
-                        src="images/nft.png"
-                        alt="collection-image"
+                        v-if="item.imageSrc"
+                        :src="item.imageSrc"
+                        :alt="item.name"
                         class="nft-image"
                     />
+                    <img v-else src="images/dummy.png" :alt="item.name" />
                     <div class="info">
-                        <h6 class="name">Jane Cooper</h6>
-                        <h6 class="price">$275.43</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <h5 class="serial">2</h5>
-                    <img
-                        src="images/nft.png"
-                        alt="collection-image"
-                        class="nft-image"
-                    />
-                    <div class="info">
-                        <h6 class="name">Jane Cooper</h6>
-                        <h6 class="price">$275.43</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <h5 class="serial">3</h5>
-                    <img
-                        src="images/nft.png"
-                        alt="collection-image"
-                        class="nft-image"
-                    />
-                    <div class="info">
-                        <h6 class="name">Jane Cooper</h6>
-                        <h6 class="price">$275.43</h6>
-                    </div>
-                </li>
-                <li class="item">
-                    <h5 class="serial">4</h5>
-                    <img
-                        src="images/nft.png"
-                        alt="collection-image"
-                        class="nft-image"
-                    />
-                    <div class="info">
-                        <h6 class="name">Jane Cooper</h6>
-                        <h6 class="price">$275.43</h6>
+                        <h6 class="name">{{ item.name }}</h6>
+                        <h6 class="price">${{ item.price }}</h6>
                     </div>
                 </li>
             </ul>
@@ -68,6 +38,60 @@
     </div>
 </template>
 <script>
+import { Component, Vue } from "nuxt-property-decorator";
+
+@Component({
+    name: "TopCollections",
+})
+export default class TopCollections extends Vue {
+    collectionItems = [
+        {
+            name: "Jane Cooper",
+            price: "275.43",
+            imageSrc: "images/collections/nft1.png",
+        },
+        {
+            name: "Wade Warren",
+            price: "300.43",
+            imageSrc: "images/collections/nft2.png",
+        },
+        {
+            name: "Esther Howard",
+            price: "3435.35",
+            imageSrc: "images/collections/nft2.png",
+        },
+        {
+            name: "Albert Flores",
+            price: "353.35",
+            imageSrc: "images/collections/nft1.png",
+        },
+				{
+            name: "Jane Cooper",
+            price: "275.43",
+            imageSrc: "images/collections/nft1.png",
+        },
+        {
+            name: "Wade Warren",
+            price: "300.43",
+            imageSrc: "images/collections/nft2.png",
+        },
+        {
+            name: "Esther Howard",
+            price: "3435.35",
+            imageSrc: "images/collections/nft2.png",
+        },
+        {
+            name: "Albert Flores",
+            price: "353.35",
+            imageSrc: "images/collections/nft1.png",
+        },
+			  {
+            name: "Brooklyn Simmons",
+            price: "353.35",
+            imageSrc: "images/collections/nft1.png",
+        },
+    ];
+}
 </script>
 
 <style scoped lang="scss">
@@ -96,11 +120,12 @@
     }
     .collection-list {
         width: 100%;
+        height: 300px;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-content: space-between;
         flex-wrap: wrap;
-        gap: 15px 6px;
+        gap: 20px 50px;
         .item {
             width: 33%;
             display: flex;
