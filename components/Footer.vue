@@ -98,7 +98,7 @@ export default class Footer extends Vue {}
     }
 }
 .copyright {
-    margin: 30px 0px;
+    padding: 30px 0px;
     font-weight: 400;
     font-size: 16px;
     text-align: center;
