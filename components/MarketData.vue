@@ -76,7 +76,7 @@
 
 <style scoped lang="scss">
 .market-box {
-    margin: 70px 0px;
+    margin: 100px 0px;
     .data {
         margin: 50px 0px;
         .table {
