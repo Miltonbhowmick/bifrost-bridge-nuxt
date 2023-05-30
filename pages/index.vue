@@ -1,5 +1,6 @@
 <template>
     <div>
+        <HeroSection />
         <MarketData />
         <TopCollections />
         <NFTFeatures />
@@ -24,6 +25,7 @@ import FeedbackHistory from "../components/FeedbackHistory";
 import TopCollections from "../components/TopCollections";
 import MarketData from "../components/MarketData";
 import NFTFeatures from "../components/NFTFeatures";
+import HeroSection from "../components/HeroSection";
 
 @Component({
     name: "Index",
@@ -35,6 +37,7 @@ import NFTFeatures from "../components/NFTFeatures";
         TopCollections,
         MarketData,
         NFTFeatures,
+        HeroSection,
     },
 })
 export default class Index extends Vue {
