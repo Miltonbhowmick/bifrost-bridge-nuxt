@@ -78,6 +78,7 @@ export default class Header extends Vue {
 <style scoped lang="scss">
 .header {
     position: fixed;
+    z-index: 99999999;
     width: 100%;
     background: none;
     .navbar {
@@ -102,6 +103,6 @@ export default class Header extends Vue {
     }
 }
 .primary-bg {
-    background: $bg-primary;
+    background: $header-bg-primary;
 }
 </style>
