@@ -55,12 +55,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="images">
-                    <img src="images/clients/client1.png" alt="client-image" />
-                    <img src="images/clients/client2.png" alt="client-image" />
-                    <img src="images/clients/client3.png" alt="client-image" />
-                    <img src="images/clients/client4.png" alt="client-image" />
-                    <img src="images/clients/client5.png" alt="client-image" />
+                <div class="album">
+                    <div class="box1">
+                        <img
+                            src="images/clients/client1.png"
+                            alt="client-image"
+                            class="client-image"
+                        />
+                    </div>
+                    <div class="box2">
+                        <img
+                            src="images/clients/client2.png"
+                            alt="client-image"
+                            class="client-image"
+                        />
+                    </div>
+                    <div class="box3">
+                        <img
+                            src="images/clients/client4.png"
+                            alt="client-image"
+                            class="client-image"
+                        />
+                    </div>
+                    <div class="box4">
+                        <img
+                            src="images/clients/client3.png"
+                            alt="client-image"
+                            class="client-image"
+                        />
+                    </div>
+                    <div class="box5">
+                        <img
+                            src="images/clients/client5.png"
+                            alt="client-image"
+                            class="client-image"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,9 +108,10 @@
         margin: 100px 0px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         gap: 15px;
         .details {
+            flex-basis: 45%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -135,13 +166,48 @@
                 }
             }
         }
-        .images {
-					display: grid;
-					grid-template-rows: auto;
-					grid-template-columns: 33% 33% 33%;
-					img{
-						object-fit: cover;
-					}
+        .album {
+            flex-basis: 45%;
+            display: grid;
+            grid-template-rows: repeat(15, 20px);
+            grid-template-columns: repeat(15, 20px);
+            grid-gap: 10px;
+            div > .client-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+            .box1 {
+                grid-row-start: 5;
+                grid-row-end: 9;
+                grid-column-start: 3;
+                grid-column-end: 8;
+            }
+            .box2 {
+                grid-row-start: 1;
+                grid-row-end: 9;
+                grid-column-start: 8;
+                grid-column-end: 14;
+            }
+            .box3 {
+                grid-row-start: 9;
+                grid-row-end: 13;
+                grid-column-start: 1;
+                grid-column-end: 6;
+            }
+            .box4 {
+                grid-row-start: 9;
+                grid-row-end: 16;
+                grid-column-start: 6;
+                grid-column-end: 11;
+            }
+            .box5 {
+                grid-row-start: 9;
+                grid-row-end: 13;
+                grid-column-start: 11;
+                grid-column-end: 16;
+            }
         }
     }
 }
