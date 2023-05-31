@@ -275,10 +275,10 @@ export default class FeedbackHistory extends Vue {
                 grid-column-end: 8;
             }
             .box2 {
-                grid-row-start: 1;
+                grid-row-start: 2;
                 grid-row-end: 9;
                 grid-column-start: 8;
-                grid-column-end: 14;
+                grid-column-end: 13;
             }
             .box3 {
                 grid-row-start: 9;
