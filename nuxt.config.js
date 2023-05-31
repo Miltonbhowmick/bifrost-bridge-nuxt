@@ -55,7 +55,7 @@ export default {
 			},
 		],
 		link: [
-			{ rel: "icon", type: "image/x-icon", href: "/bifrost_favicon.png" },
+			{ rel: "icon", type: "image/x-icon", sizes: '8x8', href: "/bifrost_favicon.ico" },
 			{ rel: "stylesheet", href: "/css/bootstrap.min.css" },
 			{
 				rel: "stylesheet",
