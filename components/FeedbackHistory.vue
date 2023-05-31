@@ -20,34 +20,32 @@
                         <fa :icon="['fas', 'star']" class="icon" />
                     </div>
                     <p class="quotes">
-                        “Aliqua id fugiat nostrud irure ex duis ea quis id quis
-                        ad et. Sunt qui esse pariatur duis deserunt mollit
-                        dolore cillum minim tempor enim. Elit aute irure tempor
-                        cupidatat incididunt sint deserunt ut voluptate aute id
-                        deserunt nisi.”
+                        {{ imageItems[0].quotes }}
                     </p>
                     <div class="client">
                         <div class="details">
                             <img
-                                :src="currentClientQuotes.imageSrc"
-																class="profile-image"
+                                :src="imageItems[0].imageSrc"
+                                class="profile-image"
                                 alt="profile-image"
                                 width="40"
                                 height="40"
                             />
                             <div class="info">
-                                <h3 class="name">Cameron Williamson</h3>
-                                <h4 class="position">NFT Analyst</h4>
+                                <h3 class="name">{{ imageItems[0].name }}</h3>
+                                <h4 class="position">
+                                    {{ imageItems[0].position }}
+                                </h4>
                             </div>
                         </div>
                         <div class="slider-buttons">
-                            <button>
+                            <button @click="handleSlider('prev')">
                                 <fa
                                     :icon="['fas', 'arrow-left']"
                                     class="icon"
                                 />
                             </button>
-                            <button>
+                            <button @click="handleSlider('next')">
                                 <fa
                                     :icon="['fas', 'arrow-right']"
                                     class="icon"
@@ -83,38 +81,98 @@ import { Component, Vue } from "nuxt-property-decorator";
 export default class FeedbackHistory extends Vue {
     imageItems = [
         {
-            name: "clien1",
+            name: "Cameron Williamson",
+            position: "Senior analysis",
+            quotes: "“Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.”",
+            imageSrc: "images/clients/client6.png",
+            className: "box0",
+        },
+        {
+            name: "Adam Roy",
+            position: "Crypto analysis",
+            quotes: "“Aliqua id asd feig rhoe erogwe orwhr oegme dolore gfe4ypdfadf ut voluptate aute id deserunt nisi.”",
             imageSrc: "images/clients/client1.png",
             className: "box1",
         },
         {
-            name: "clien2",
+            name: "White",
+            position: "Blockchain analysis",
+            quotes: "“Aliqua id asd feig rhoeadvadg ageg r hrhr id deserunt nisi. etetew wg weg.”",
             imageSrc: "images/clients/client2.png",
             className: "box2",
         },
         {
-            name: "clien3",
+            name: "Kine Williamson",
             imageSrc: "images/clients/client3.png",
             className: "box3",
         },
         {
-            name: "clien4",
+            name: "Andre Flower",
             imageSrc: "images/clients/client4.png",
             className: "box4",
         },
         {
-            name: "clien5",
+            name: "Steve Smith",
             imageSrc: "images/clients/client5.png",
             className: "box5",
         },
     ];
 
-    currentClientQuotes = this.imageItems[0];
+    currentImageIdx = 0;
 
     handleImageChange(index) {
-        var tmp = this.currentClientQuotes.imageSrc;
-        this.currentClientQuotes.imageSrc = this.imageItems[index].imageSrc;
-        this.imageItems[index].imageSrc = tmp;
+        var tmp = this.imageItems[0];
+        this.imageItems[0].name = this.imageItems[index].name;
+        this.imageItems[0].position = this.imageItems[index].position;
+        this.imageItems[0].quotes = this.imageItems[index].quotes;
+        this.imageItems[0].imageSrc = this.imageItems[index].imageSrc;
+        this.imageItems[index].name = tmp.name;
+        this.imageItems[index].position = tmp.position;
+        this.imageItems[index].quotes = tmp.quotes;
+        this.imageItems[index].imageSrc = tmp.imageSrc;
+    }
+    circularSuffle() {
+        var ln = this.imageItems.length;
+        var name = this.imageItems[ln - 1].name;
+        var position = this.imageItems[ln - 1].position;
+        var quotes = this.imageItems[ln - 1].quotes;
+        var lastImage = this.imageItems[ln - 1].imageSrc;
+
+        for (var i = ln - 1; i > 0; i--) {
+            this.imageItems[i].name = this.imageItems[i - 1].name;
+            this.imageItems[i].position = this.imageItems[i - 1].position;
+            this.imageItems[i].quotes = this.imageItems[i - 1].quotes;
+            this.imageItems[i].imageSrc = this.imageItems[i - 1].imageSrc;
+        }
+        this.imageItems[0].name = name;
+        this.imageItems[0].position = position;
+        this.imageItems[0].quotes = quotes;
+        this.imageItems[0].imageSrc = lastImage;
+    }
+    reverseCircularSuffle() {
+        var ln = this.imageItems.length;
+        var name = this.imageItems[0].name;
+        var position = this.imageItems[0].position;
+        var quotes = this.imageItems[0].quotes;
+        var firstImage = this.imageItems[0].imageSrc;
+        for (var i = 1; i < ln; i++) {
+            this.imageItems[i - 1].name = this.imageItems[i].name;
+            this.imageItems[i - 1].position = this.imageItems[i].position;
+            this.imageItems[i - 1].quotes = this.imageItems[i].quotes;
+            this.imageItems[i - 1].imageSrc = this.imageItems[i].imageSrc;
+        }
+        this.imageItems[ln - 1].name = name;
+        this.imageItems[ln - 1].position = position;
+        this.imageItems[ln - 1].quotes = quotes;
+        this.imageItems[ln - 1].imageSrc = firstImage;
+    }
+    handleSlider(towards) {
+        if (towards === "prev") {
+            console.log("prev");
+            this.reverseCircularSuffle();
+        } else if (towards === "next") {
+            this.circularSuffle();
+        }
     }
 }
 </script>
@@ -142,6 +200,7 @@ export default class FeedbackHistory extends Vue {
                 }
             }
             .quotes {
+                min-height: 180px;
                 font-size: $quotes-font-size;
                 font-weight: $quotes-font-weight;
                 color: $quotes-text;
@@ -152,13 +211,14 @@ export default class FeedbackHistory extends Vue {
                 justify-content: space-between;
                 align-items: center;
                 .details {
+                    flex-grow: 1;
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
-										.profile-image{
-											border-radius: 50%;
-										}
+                    .profile-image {
+                        border-radius: 50%;
+                    }
                     .info {
                         .name {
                             font-weight: 500;
@@ -200,6 +260,9 @@ export default class FeedbackHistory extends Vue {
                 height: 100%;
                 object-fit: cover;
                 border-radius: 4px;
+            }
+            .box0 {
+                display: none;
             }
             .box1 {
                 grid-row-start: 5;
