@@ -55,7 +55,12 @@ export default {
 			},
 		],
 		link: [
-			{ rel: "icon", type: "image/x-icon", sizes: '8x8', href: "/bifrost_favicon.ico" },
+			{
+				rel: "icon",
+				type: "image/x-icon",
+				sizes: "8x8",
+				href: "/bifrost_favicon.ico",
+			},
 			{ rel: "stylesheet", href: "/css/bootstrap.min.css" },
 			{
 				rel: "stylesheet",
@@ -108,6 +113,10 @@ export default {
 		},
 		{
 			src: "~/plugins/vue-debounce.js",
+			ssr: false,
+		},
+		{
+			src: "~/plugins/gsap.client.js",
 			ssr: false,
 		},
 	],

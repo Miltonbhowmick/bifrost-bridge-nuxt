@@ -1,10 +1,5 @@
 <template>
-    <div
-        class="header"
-        :class="{
-            'primary-bg': toggleNavBackground,
-        }"
-    >
+    <div class="header">
         <div class="container">
             <nav class="navbar">
                 <NuxtLink class="navbar-brand" to="/"
@@ -71,8 +66,17 @@ export default class Header extends Vue {
             var scrollTop = document.documentElement.scrollTop;
             if (scrollTop > heroOffset) {
                 this.toggleNavBackground = true;
+                this.$gsap.to(".header", {
+                    opacity: 1,
+                    background: "#022933",
+                    duration: 1,
+                });
             } else {
                 this.toggleNavBackground = false;
+                this.$gsap.to(".header", {
+                    background: "none",
+                    duration: 1,
+                });
             }
         }
     }
