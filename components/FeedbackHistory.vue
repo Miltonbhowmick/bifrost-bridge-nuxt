@@ -121,15 +121,19 @@ export default class FeedbackHistory extends Vue {
     currentImageIdx = 0;
 
     handleImageChange(index) {
-        var tmp = this.imageItems[0];
+        var name = this.imageItems[0].name;
+        var position = this.imageItems[0].position;
+        var quotes = this.imageItems[0].quotes;
+        var imageSrc = this.imageItems[0].imageSrc;
         this.imageItems[0].name = this.imageItems[index].name;
         this.imageItems[0].position = this.imageItems[index].position;
         this.imageItems[0].quotes = this.imageItems[index].quotes;
         this.imageItems[0].imageSrc = this.imageItems[index].imageSrc;
-        this.imageItems[index].name = tmp.name;
-        this.imageItems[index].position = tmp.position;
-        this.imageItems[index].quotes = tmp.quotes;
-        this.imageItems[index].imageSrc = tmp.imageSrc;
+
+        this.imageItems[index].name = name;
+        this.imageItems[index].position = position;
+        this.imageItems[index].quotes = quotes;
+        this.imageItems[index].imageSrc = imageSrc;
     }
     circularSuffle() {
         var ln = this.imageItems.length;
