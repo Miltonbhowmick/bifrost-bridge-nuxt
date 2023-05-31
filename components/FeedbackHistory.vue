@@ -29,7 +29,8 @@
                     <div class="client">
                         <div class="details">
                             <img
-                                src="images/client-profile-image.png"
+                                :src="currentClientQuotes.imageSrc"
+																class="profile-image"
                                 alt="profile-image"
                                 width="40"
                                 height="40"
@@ -56,39 +57,16 @@
                     </div>
                 </div>
                 <div class="album">
-                    <div class="box1">
+                    <div
+                        v-for="(item, index) in imageItems"
+                        :key="index"
+                        :class="item.className"
+                        @click="handleImageChange(index)"
+                    >
                         <img
-                            src="images/clients/client1.png"
-                            alt="client-image"
-                            class="client-image"
-                        />
-                    </div>
-                    <div class="box2">
-                        <img
-                            src="images/clients/client2.png"
-                            alt="client-image"
-                            class="client-image"
-                        />
-                    </div>
-                    <div class="box3">
-                        <img
-                            src="images/clients/client4.png"
-                            alt="client-image"
-                            class="client-image"
-                        />
-                    </div>
-                    <div class="box4">
-                        <img
-                            src="images/clients/client3.png"
-                            alt="client-image"
-                            class="client-image"
-                        />
-                    </div>
-                    <div class="box5">
-                        <img
-                            src="images/clients/client5.png"
-                            alt="client-image"
-                            class="client-image"
+                            :src="item.imageSrc"
+                            :alt="item.name"
+                            class="client-image cursor-pointer"
                         />
                     </div>
                 </div>
@@ -98,6 +76,47 @@
 </template>
 
 <script>
+import { Component, Vue } from "nuxt-property-decorator";
+@Component({
+    name: "FeedbackHistory",
+})
+export default class FeedbackHistory extends Vue {
+    imageItems = [
+        {
+            name: "clien1",
+            imageSrc: "images/clients/client1.png",
+            className: "box1",
+        },
+        {
+            name: "clien2",
+            imageSrc: "images/clients/client2.png",
+            className: "box2",
+        },
+        {
+            name: "clien3",
+            imageSrc: "images/clients/client3.png",
+            className: "box3",
+        },
+        {
+            name: "clien4",
+            imageSrc: "images/clients/client4.png",
+            className: "box4",
+        },
+        {
+            name: "clien5",
+            imageSrc: "images/clients/client5.png",
+            className: "box5",
+        },
+    ];
+
+    currentClientQuotes = this.imageItems[0];
+
+    handleImageChange(index) {
+        var tmp = this.currentClientQuotes.imageSrc;
+        this.currentClientQuotes.imageSrc = this.imageItems[index].imageSrc;
+        this.imageItems[index].imageSrc = tmp;
+    }
+}
 </script>
 
 <style scoped lang="scss">
@@ -137,6 +156,9 @@
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
+										.profile-image{
+											border-radius: 50%;
+										}
                     .info {
                         .name {
                             font-weight: 500;
@@ -152,6 +174,7 @@
                 }
                 .slider-buttons {
                     button {
+                        margin: 0px 5px;
                         width: 56px;
                         height: 56px;
                         background: #ffb401;
