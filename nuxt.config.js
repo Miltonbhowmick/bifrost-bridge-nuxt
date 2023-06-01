@@ -115,10 +115,6 @@ export default {
 			src: "~/plugins/vue-debounce.js",
 			ssr: false,
 		},
-		{
-			src: "~/plugins/gsap.client.js",
-			ssr: false,
-		},
 	],
 
 	components: true,
