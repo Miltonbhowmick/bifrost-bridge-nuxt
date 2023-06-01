@@ -1,0 +1,58 @@
+// Font variables
+$inter-font: 'Poppins';
+$default-font-size: 14px;
+
+$section-headline-font-size: 30px;
+$section-subheadline-font-size: 18px;
+$section-headline-font-weight: 600;
+$section-subheadline-font-weight: 400;
+$section-headline-line-height: 45px;
+$section-subheadline-line-height: 28px;
+
+$rating-star-size: 22px;
+$quotes-font-size: 24px;
+$quotes-font-weight: 400;
+$owner-name-font-size: 20px;
+$owner-name-font-weight: 500;
+
+// Colors variables
+$bg-primary: #031B27;
+$header-bg-primary: #022933;
+
+$text-link: #FFB401;
+
+$input-placeholder: rgba(255, 255, 255, 0.7);
+
+$navbar-menu-text: #FFFFFF;
+$navbar-menu-hover-text: #FFB401;
+
+$owner-name-text: #FFFFFF;
+$owner-price-text:  rgba(255, 255, 255, 0.8);
+
+$section-headline-text: #FFFFFF;
+$section-subheadline-text:  #E8E8E8;
+
+$rating-star-color: #FEC84B;
+
+$quotes-text: #D5D5D5;
+
+$information-box-headline-text: #FFFFFF;
+$information-box-subheadline-text: rgba(255, 255, 255, 0.7);
+
+$timeline-headline-text: #FFFFFF;
+$timeline-subheadline-text:#B4C5CB;
+
+$footer-describtion-text: rgba(206, 204, 214, 0.7);
+$footer-col-headline-text: #FFFFFF;
+$footer-col-subheadline-text:  #CECCD6;
+
+
+// Responsive variables
+$smart-small-phone-breakpoint-max: 376px;
+$smart-phone-breakpoint-max: 480px;
+$medium-breakpoint-max: 576px;
+$small-breakpoint-max: 676px;
+$mobile-breakpoint-max: 768px; //767px;
+$tablet-breakpoint-max: 1400px;
+$large-breakpoint-max: 1920px;
+

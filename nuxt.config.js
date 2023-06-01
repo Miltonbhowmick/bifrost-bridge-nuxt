@@ -55,7 +55,12 @@ export default {
 			},
 		],
 		link: [
-			{ rel: "icon", type: "image/x-icon", href: "/bifrost_favicon.png" },
+			{
+				rel: "icon",
+				type: "image/x-icon",
+				sizes: "8x8",
+				href: "/bifrost_favicon.ico",
+			},
 			{ rel: "stylesheet", href: "/css/bootstrap.min.css" },
 			{
 				rel: "stylesheet",
@@ -110,6 +115,10 @@ export default {
 			src: "~/plugins/vue-debounce.js",
 			ssr: false,
 		},
+		{
+			src: "~/plugins/gsap.client.js",
+			ssr: false,
+		},
 	],
 
 	components: true,
@@ -118,9 +127,18 @@ export default {
 	// 	middleware: "authenticated",
 	// },
 
-	buildModules: ["@nuxtjs/style-resources"],
+	buildModules: ["@nuxtjs/style-resources", "@nuxtjs/fontawesome"],
 
 	modules: ["@nuxtjs/axios", "@nuxtjs/dayjs", "cookie-universal-nuxt"],
+
+	fontawesome: {
+		component: "Fa",
+		suffix: false,
+		icons: {
+			solid: true,
+			brands: true,
+		},
+	},
 
 	dayjs: {
 		plugins: ["utc"],
