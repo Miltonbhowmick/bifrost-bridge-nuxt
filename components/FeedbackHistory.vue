@@ -199,6 +199,8 @@ export default class FeedbackHistory extends Vue {
             gap: 35px;
             .rating {
                 .icon {
+                    width: 20px;
+                    height: 20px;
                     color: $rating-star-color;
                     font-size: $rating-star-size;
                 }
@@ -246,6 +248,7 @@ export default class FeedbackHistory extends Vue {
                         border: none;
                         border-radius: 28px;
                         .icon {
+                            width: 40%;
                             font-size: 22px;
                             color: rgba(255, 255, 255, 0.7);
                         }
