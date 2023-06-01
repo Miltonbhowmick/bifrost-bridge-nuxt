@@ -27,6 +27,7 @@ import MarketData from "../components/MarketData";
 import NFTFeatures from "../components/NFTFeatures";
 import HeroSection from "../components/HeroSection";
 
+
 @Component({
     name: "Index",
     components: {
