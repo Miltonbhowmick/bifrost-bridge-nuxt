@@ -1,22 +1,17 @@
 <template>
     <div>
-        <!-- <GSAPScrollSmoother :vars="{ smooth: 7, effects: true }"> -->
-            <Header />
-            <Nuxt />
-            <Footer />
-        <!-- </GSAPScrollSmoother> -->
+        <Header />
+        <Nuxt />
+        <Footer />
     </div>
 </template>
 
 <script>
 import { Component, Vue } from "nuxt-property-decorator";
-import GSAPScrollSmoother from "../components/GSAPScrollSmoother";
 
 @Component({
     name: "Default",
-    components: {
-        // GSAPScrollSmoother,
-    },
+    components: {},
 })
 export default class Default extends Vue {}
 </script>
