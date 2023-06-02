@@ -1,2 +1,5 @@
-export const PUBLIC_ACCOUNT_ENDPOINT = `/api/v1/account/public`;
-export const PUBLIC_VEVE_ENDPOINT = `/api/v1/veve/public`;
+export const PUBLIC_AUTHENTICATION_ENDPOINT = `/api/v1/auth/public`;
+export const PUBLIC_UTILITY_ENDPOINT = `/api/v1/utility/public`;
+
+export const PUBLIC_SETTINGS_ENDPOINT =
+	PUBLIC_UTILITY_ENDPOINT + `/settings/all/`;
