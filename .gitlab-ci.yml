@@ -25,6 +25,7 @@ dev-build:
   only:
     refs:
       - main
+
 # production-build:
 #   stage: build
 #   script:
@@ -58,3 +59,23 @@ dev-build:
 #       - amir
 #     variables:
 #       - $CI_COMMIT_MESSAGE =~ /deploy/
+
+development:
+  stage: deploy
+  before_script:
+    - mkdir -p ~/.ssh
+    - cp -rv $BIFROST_DEV_PRIVATE_KEY ~/.ssh/id_rsa_bifrost_backend
+    - chmod 600 ~/.ssh/id_rsa_bifrost_backend
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa_bifrost_backend
+    - ssh-keyscan -H $DEVELOPMENT_SERVER_IP >> ~/.ssh/known_hosts
+  script:
+    - ssh root@$DEVELOPMENT_SERVER_IP "export COMPOSE_INTERACTIVE_NO_CLI=1 && cd /www/bifrost && docker-compose pull frontend && docker-compose stop frontend && docker-compose up -d frontend; rm -r frontend/_nuxt/ &> /dev/null; docker cp bifrost_frontend:/app/.nuxt/dist/client/ frontend/_nuxt; sleep 5s; export COMPOSE_INTERACTIVE_NO_CLI=0"
+  tags:
+    - docker
+    - build
+  only:
+    refs:
+      - main
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /deploy/
