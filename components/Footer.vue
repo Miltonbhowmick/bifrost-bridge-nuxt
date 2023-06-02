@@ -3,56 +3,119 @@
         <footer class="footer">
             <div class="box">
                 <div class="col">
-                    <a href="#" class="company"
-                        ><img src="images/bifrost_logo_half.png" alt="bifrost-logo"
-                    /></a>
-                    <p class="description">
-                        Vemate is the most versatile and dynamic application on
+                    <nuxt-link to="/" class="company"
+                        ><img
+                            v-if="getSettings.settings.company_logo"
+                            :src="
+                                HOST +
+                                getSettings.settings.company_logo.original.src
+                            "
+                            :alt="
+                                getSettings.settings.company_logo.original.alt
+                            "
+                        />
+                        <img
+                            v-else
+                            src="images/bifrost_logo.png"
+                            alt="bifrost-logo"
+                        />
+                    </nuxt-link>
+                    <p
+                        v-if="getSettings.settings.footer_description"
+                        class="description"
+                    >
+                        {{ getSettings.settings.footer_description }}
+                    </p>
+                    <p v-else class="description">
+                        Bifrost is the most versatile and dynamic application on
                         the market which supplies trading analysis tools,market
                         information, fractional and tokenised NFT trading as
                         well as the only fully integratedCrypto - NFT bridging
                         marketplace.
                     </p>
                 </div>
-                <div class="col">
-                    <h2 class="headline">Economy</h2>
-                    <a class="link">Tokens</a>
-                    <a class="link">Exchange</a>
-                    <a class="link">Staking</a>
-                    <a class="link">Earn</a>
-                    <a class="link">Marketplace</a>
+                <div
+                    v-for="(menu, index) in getSettings.footermenu"
+                    :key="'menuitem_' + index"
+                    class="col"
+                >
+                    <h2 v-if="menu.is_active" class="headline">
+                        {{ menu.title }}
+                    </h2>
+                    <ul v-if="menu.is_active" class="link-list">
+                        <li
+                            v-for="(submenu, index) in menu.submenus"
+                            :key="'submenuitem_' + index"
+                        >
+                            <a
+                                v-if="submenu.is_external == true"
+                                :href="submenu.link_url"
+                                target="_blank"
+                                class="link"
+                                >{{ submenu.link_title }}</a
+                            >
+                            <nuxt-link
+                                v-else
+                                :to="submenu.link_url"
+                                class="link"
+                                >{{ submenu.link_title }}</nuxt-link
+                            >
+                        </li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <h2 class="headline">About Us</h2>
-                    <a class="link">Blog</a>
-                    <a class="link">Help</a>
-                    <a class="link">Team</a>
-                    <a class="link">Privacy</a>
-                    <a class="link">Policy</a>
-                </div>
-                <div class="col">
-                    <h2 class="headline">Vemate Ltd</h2>
-                    <a class="link">Company Number: 13989933</a>
-                    <a class="link">(406) 555-0120</a>
-                    <a class="link">mangcoding123@gmail.com</a>
-                    <a class="link"
-                        >4th Floor, Silverstream House 45 Fitzroy Street,
-                        Fitzrovia London, W1T 6EB
-                    </a>
+                    <h2 class="headline">Bifrost</h2>
+                    <ul class="link-list">
+                        <li>
+                            <a class="link"
+                                >Company Number:
+                                {{ getSettings.settings.company_number }}</a
+                            >
+                        </li>
+                        <li>
+                            <a class="link">
+                                <fa :icon="['fas', 'phone']" class="icon" />
+                                {{ getSettings.settings.contact_number }}</a
+                            >
+                        </li>
+                        <li>
+                            <a class="link">
+                                <fa :icon="['fas', 'envelope']" class="icon" />
+                                {{ getSettings.settings.contact_email }}</a
+                            >
+                        </li>
+                        <li>
+                            <a class="link"
+                                ><fa
+                                    :icon="['fas', 'location-dot']"
+                                    class="icon"
+                                />{{ getSettings.settings.address }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </footer>
-        <p class="copyright">BIFROST all Rights Reserved © Copyright 2023.</p>
+        <p v-if="getSettings.settings.copyright_text" class="copyright">
+            {{ getSettings.settings.copyright_text }}
+        </p>
     </div>
 </template>
 
 <script>
-import { Component, Vue } from "nuxt-property-decorator";
+import { Component, Vue, Getter } from "nuxt-property-decorator";
+import { GET_SETTINGS } from "../utils/store/getter.names";
+import { NS_SETTINGS } from "../utils/store/namespace.names";
+import { namespaced } from "../utils/utils";
 @Component({
     name: "Footer",
     components: {},
 })
-export default class Footer extends Vue {}
+export default class Footer extends Vue {
+    @Getter(namespaced(NS_SETTINGS, GET_SETTINGS)) getSettings;
+
+    HOST = this.$config.HOST;
+}
 </script>
 
 <style scoped lang="scss">
@@ -69,35 +132,50 @@ export default class Footer extends Vue {}
         display: flex;
         flex-direction: row;
         justify-content: center;
-        // align-content: center;
-        gap: 100px;
+        gap: 76px;
         .col {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 10px;
+            gap: 0px;
             &:first-child {
-                flex-basis: 30%;
+                flex-basis: 20%;
+                gap: 35px;
             }
-						.company{
-							img{
-								width: 20%;
-							}
-						}
+            .company {
+                img {
+                    width: 35%;
+                }
+            }
             .description {
                 font-weight: 400;
                 font-size: 14px;
                 color: rgba(206, 204, 214, 0.7);
             }
             .headline {
+                margin: 0;
                 font-weight: 500;
                 font-size: 16px;
                 color: #ffffff;
             }
-            .link {
-                font-weight: 400;
-                font-size: 14px;
-                color: #ceccd6;
+            .link-list {
+                li {
+                    margin: 8px 0px;
+                    .link {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        gap: 5px;
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #ceccd6;
+                        .icon {
+                            margin-top: 5px;
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+                }
             }
         }
     }
