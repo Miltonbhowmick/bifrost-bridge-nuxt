@@ -42,12 +42,12 @@
                 <ul class="navbar-nav flex-row gap-4 auth-links">
                     <li class="nav-item">
                         <a class="nav-link cursor-pointer text-capitalize"
-                            >Sign In</a
+                            ><div>Sign Up</div></a
                         >
                     </li>
                     <li class="nav-item">
                         <a class="nav-link cursor-pointer text-capitalize"
-                            >Sign Up</a
+                            >Sign In</a
                         >
                     </li>
                 </ul>
@@ -111,11 +111,17 @@ export default class Header extends Vue {
             }
         }
         .auth-links {
-            .nav-link {
-                color: $navbar-menu-text;
-                padding: 6px 20px;
-                background: linear-gradient(270deg, #ffb401 0%, #dad31b 100%);
-                border-radius: 5px;
+            .nav-item {
+                .nav-link {
+                    color: $navbar-menu-text;
+                    padding: 6px 20px;
+                    background: linear-gradient(
+                        270deg,
+                        #ffb401 0%,
+                        #dad31b 100%
+                    );
+                    border-radius: 5px;
+                }
             }
         }
     }
