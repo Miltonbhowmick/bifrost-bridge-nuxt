@@ -282,7 +282,7 @@ export default class Fractionalize extends Vue {
                 width: 80%;
                 // height is fixed because we will have 3 lines of description inside the box
                 height: 212px;
-                padding: 8px;
+                padding: 6px;
                 border-radius: 16px;
                 display: flex;
                 flex-direction: row;
