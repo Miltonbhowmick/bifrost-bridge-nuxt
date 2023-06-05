@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container fractionalize">
         <div class="fractionalize-box">
             <h2 class="section-headline">
                 Unlock the Value of Your NFTs: Fractionalize and Maximize Your
@@ -96,7 +96,7 @@ export default class Fractionalize extends Vue {
 
 <style scoped lang="scss">
 .fractionalize-box {
-    margin: 50px 0px;
+    margin: 200px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
