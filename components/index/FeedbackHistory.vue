@@ -254,7 +254,7 @@ export default class FeedbackHistory extends Vue {
 			}
 		}
 		.album {
-			flex-basis: 45%;
+			flex-basis: 34%;
 			display: grid;
 			grid-template-rows: repeat(15, 20px);
 			grid-template-columns: repeat(15, 20px);
