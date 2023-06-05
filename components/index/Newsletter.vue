@@ -107,7 +107,7 @@ export default class Newsletter extends Vue {
         margin-top: 10px;
         width: 50%;
         input {
-            padding: 10px 8px;
+            padding: 14px 8px;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 8px;
@@ -116,9 +116,9 @@ export default class Newsletter extends Vue {
         }
         button {
             position: absolute;
-            right: 12px;
-            top: 6px;
-            padding: 5px 10px;
+            right: 10px;
+            top: 10px;
+            padding: 5px 20px;
             background: linear-gradient(270deg, #ffb401 0%, #dad31b 100%);
             border: none;
             border-radius: 8px;
