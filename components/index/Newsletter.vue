@@ -19,9 +19,44 @@
             <div class="community-box">
                 <h4 class="social-headline">Join our Community</h4>
                 <ul class="social-links">
-                    <li v-for="(item, index) in socialItems" :key="index">
-                        <a :href="item.href" target="_blank" rel="nofollow"
-                            ><img :src="item.imageSrc" :alt="item.alt"
+                    <li>
+                        <a
+                            :href="getSettings.social.facebook"
+                            target="_blank"
+                            rel="nofollow"
+                            ><img
+                                src="images/socials/twitter.svg"
+                                alt="facebook-icon"
+                        /></a>
+                    </li>
+                    <li>
+                        <a
+                            :href="getSettings.social.linkedin"
+                            target="_blank"
+                            rel="nofollow"
+                            ><img
+                                src="images/socials/linkedin.svg"
+                                alt="linkedin-icon"
+                        /></a>
+                    </li>
+                    <li>
+                        <a
+                            :href="getSettings.social.instagram"
+                            target="_blank"
+                            rel="nofollow"
+                            ><img
+                                src="images/socials/instagram.svg"
+                                alt="instagram-icon"
+                        /></a>
+                    </li>
+                    <li>
+                        <a
+                            :href="getSettings.social.telegram"
+                            target="_blank"
+                            rel="nofollow"
+                            ><img
+                                src="images/socials/telegram.svg"
+                                alt="telegram-icon"
                         /></a>
                     </li>
                 </ul>
@@ -31,44 +66,16 @@
 </template>
 
 <script>
-import { Component, Vue } from "nuxt-property-decorator";
+import { Component, Vue, Getter } from "nuxt-property-decorator";
+import { GET_SETTINGS } from "../../utils/store/getter.names";
+import { NS_SETTINGS } from "../../utils/store/namespace.names";
+import { namespaced } from "../../utils/utils";
 @Component({
     name: "Newsletter",
     components: {},
 })
 export default class Newsletter extends Vue {
-    socialItems = [
-        {
-            name: "twitter",
-            href: "#",
-            imageSrc: "images/socials/twitter.svg",
-            alt: "twitter",
-        },
-        {
-            name: "instagram",
-            href: "#",
-            imageSrc: "images/socials/instagram.svg",
-            alt: "instagram",
-        },
-        {
-            name: "linkedin",
-            href: "#",
-            imageSrc: "images/socials/linkedin.svg",
-            alt: "linkedin",
-        },
-        {
-            name: "discord",
-            href: "#",
-            imageSrc: "images/socials/discord.svg",
-            alt: "discord",
-        },
-        {
-            name: "telegram",
-            href: "#",
-            imageSrc: "images/socials/telegram.svg",
-            alt: "telegram",
-        },
-    ];
+    @Getter(namespaced(NS_SETTINGS, GET_SETTINGS)) getSettings;
 }
 </script>
 
@@ -133,6 +140,7 @@ export default class Newsletter extends Vue {
         }
         .social-links {
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: 15px;
         }
