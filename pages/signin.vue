@@ -45,8 +45,34 @@
                         </div>
                         <button type="submit" class="login-btn">Login</button>
                     </form>
-                    <div>
-										</div>
+                    <div class="social-continue-border">
+                        <div class="border"></div>
+                        <div class="text">or continue with</div>
+                        <div class="border"></div>
+                    </div>
+                    <div class="social-links">
+                        <ul>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="images/facebook-signin.png"
+                                        alt="facebook-signin"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="images/google-signin.png"
+                                        alt="google-signin"
+                                        width="10"
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="go-signup">
+                        <span>Don,t have an account?</span
+                        ><a href="#">sign up</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,6 +184,47 @@ export default class Signin extends Vue {}
                         color: #ffffff;
                         font-weight: 500;
                         font-size: 20px;
+                    }
+                }
+                .social-continue-border {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    .border {
+                        width: 32%;
+                    }
+                    .text {
+                        color: #ffffff;
+                    }
+                }
+                .social-links {
+                    width: 100%;
+                    ul {
+                        display: flex;
+                        justify-content: center;
+                        gap: 12px;
+                        list-style: none;
+                        li {
+                            a {
+                            }
+                        }
+                    }
+                }
+                .go-signup {
+                    width: 100%;
+                    text-align: center;
+                    span {
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #bdbdbd;
+                        margin-right: 3px;
+                    }
+                    a {
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #ffb401;
                     }
                 }
             }
