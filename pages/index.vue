@@ -7,7 +7,7 @@
 		<FeedbackHistory />
 		<Fractionalize />
 		<Campaign />
-		<Newsletter />
+		<!-- <Newsletter /> -->
 	</div>
 </template>
 
