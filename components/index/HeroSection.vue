@@ -9,8 +9,24 @@
 
 <style scoped lang="scss">
 .hero-section {
+    position: relative;
     img {
         width: 100%;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: linear-gradient(
+            180deg,
+            hsla(0, 0%, 100%, 0),
+            #031b27 99%
+        );
+        width: 100%;
+        height: 4em;
     }
 }
 </style>
