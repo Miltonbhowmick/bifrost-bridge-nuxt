@@ -41,13 +41,17 @@
                 </ul>
                 <ul class="navbar-nav flex-row gap-4 auth-links">
                     <li class="nav-item">
-                        <a class="nav-link cursor-pointer text-capitalize"
-                            ><div>Sign Up</div></a
+                        <nuxt-link
+                            to="/signup"
+                            class="nav-link cursor-pointer text-capitalize"
+                            >Sign Up</nuxt-link
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link cursor-pointer text-capitalize"
-                            >Sign In</a
+                        <nuxt-link
+                            to="/signup"
+                            class="nav-link cursor-pointer text-capitalize"
+                            >Sign In</nuxt-link
                         >
                     </li>
                 </ul>

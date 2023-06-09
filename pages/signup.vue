@@ -11,7 +11,7 @@
             <div class="content">
                 <div class="info">
                     <div class="back-box">
-                        <a href="#" class="btn">Back</a>
+                        <a @click="handleBack" class="btn">Back</a>
                     </div>
                     <h1 class="welcome">Register your account</h1>
                     <h2 class="continue">
@@ -59,7 +59,7 @@
 
                     <div class="go-signup">
                         <span>Already have account?</span
-                        ><a href="#">Login</a>
+                        ><nuxt-link to="/signin">Signin</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,16 @@ import { Component, Vue } from "nuxt-property-decorator";
     layout: "custom",
     components: {},
 })
-export default class Signup extends Vue {}
+export default class Signup extends Vue {
+    handleBack() {
+        var fullPath = this.$nuxt.context.from;
+        if (fullPath) {
+            this.$router.go(-1);
+        } else {
+            this.$router.push("/signin");
+        }
+    }
+}
 </script>
 
 <style scoped lang="scss">
@@ -98,7 +107,7 @@ export default class Signup extends Vue {}
             justify-content: center;
             align-items: center;
             .info {
-                width: 70%;
+                width: 60%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -153,16 +162,22 @@ export default class Signup extends Vue {}
                             color: #ffffff;
                         }
                         input {
-                            padding: 10px 12px;
+                            padding: $input-field-padding;
                             background: #ffffff;
                             border: none;
-                            border-radius: 4px;
+                            border-radius: $input-field-br-radius;
                         }
                     }
                     .go-terms-condition {
                         font-weight: 500;
-                        font-size: 12px;
-                        color: #8692a6;
+                        font-size: 14px;
+                        color: #bdbdbd;
+                        margin-right: 3px;
+                        a {
+                            font-weight: 500;
+                            font-size: 14px;
+                            color: #ffb401;
+                        }
                     }
                     .signup-btn {
                         padding: 12px 28px;

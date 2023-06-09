@@ -55,14 +55,14 @@
                             <li>
                                 <a href="#"
                                     ><img
-                                        src="images/facebook-signin.png"
+                                        src="images/socials/facebook-signin.png"
                                         alt="facebook-signin"
                                 /></a>
                             </li>
                             <li>
                                 <a href="#"
                                     ><img
-                                        src="images/google-signin.png"
+                                        src="images/socials/google-signin.png"
                                         alt="google-signin"
                                         width="10"
                                 /></a>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="go-signup">
                         <span>Don,t have an account?</span
-                        ><a href="#">sign up</a>
+                        ><nuxt-link to="/signup">Sign up</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@ export default class Signin extends Vue {}
             justify-content: center;
             align-items: center;
             .info {
-                width: 70%;
+                width: 60%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -142,9 +142,9 @@ export default class Signin extends Vue {}
                             color: #ffffff;
                         }
                         input {
-                            padding: 6px 12px;
+                            padding: $input-field-padding;
                             background: #ffffff;
-                            border-radius: 4px;
+                            border-radius: $input-field-br-radius;
                         }
                     }
                     .forget-remember {
@@ -187,6 +187,7 @@ export default class Signin extends Vue {}
                     }
                 }
                 .social-continue-border {
+                    margin-top: 30px;
                     width: 100%;
                     display: flex;
                     flex-direction: row;
@@ -200,6 +201,7 @@ export default class Signin extends Vue {}
                     }
                 }
                 .social-links {
+                    margin-top: 15px;
                     width: 100%;
                     ul {
                         display: flex;
@@ -207,12 +209,21 @@ export default class Signin extends Vue {}
                         gap: 12px;
                         list-style: none;
                         li {
+                            padding: 10px;
+                            background: #ffffff;
+                            border: 3px solid #dad31b;
+                            border-radius: 6px;
                             a {
+                                img {
+                                    width: 20px;
+                                    height: 20px;
+                                }
                             }
                         }
                     }
                 }
                 .go-signup {
+                    margin-top: 15px;
                     width: 100%;
                     text-align: center;
                     span {
