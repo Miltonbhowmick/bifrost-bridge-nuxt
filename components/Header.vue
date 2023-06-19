@@ -100,6 +100,7 @@ export default class Header extends Vue {
 <style scoped lang="scss">
 .header {
     position: fixed;
+		top:0;
     z-index: 99999999;
     width: 100%;
     background: none;
