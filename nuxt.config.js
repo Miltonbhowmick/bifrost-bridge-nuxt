@@ -115,6 +115,10 @@ export default {
 			src: "~/plugins/vue-debounce.js",
 			ssr: false,
 		},
+		{
+			src: "~/plugins/vue-carousel-3d.js",
+			ssr: false,
+		},
 	],
 
 	components: true,
