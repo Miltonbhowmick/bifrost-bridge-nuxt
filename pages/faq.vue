@@ -92,6 +92,7 @@
                 }
             }
             .accordion-collapse {
+                border-radius: 0px;
                 .accordion-body {
                     border: none !important;
                     background-color: #031b27;
