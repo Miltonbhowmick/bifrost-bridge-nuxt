@@ -76,6 +76,7 @@
 	.data {
 		margin: 50px 0px;
 		overflow-x: auto;
+		border-radius: 25px;
 		.table {
 			border-collapse: collapse;
 			border-radius: 25px;
