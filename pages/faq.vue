@@ -19,7 +19,11 @@
 							aria-expanded="true"
 							aria-controls="collapseOne"
 						>
+<<<<<<< HEAD
 							Accordion Item #1
+=======
+							Lorem Ipsum is a simply ?
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 						</button>
 					</h2>
 					<div
@@ -29,6 +33,7 @@
 						data-bs-parent="#accordionExample"
 					>
 						<div class="accordion-body">
+<<<<<<< HEAD
 							<strong>This is the first item's accordion body.</strong>
 							It is shown by default, until the collapse plugin adds the
 							appropriate classes that we use to style each element. These
@@ -102,6 +107,13 @@
 							that just about any HTML can go within the
 							<code>.accordion-body</code>, though the transition does limit
 							overflow.
+=======
+							Lorem ipsum temps us est amet lectus lorem ipsum set in neque of
+							grt hlodvb libero tellus loreum Lorem ipsum temps us est amet
+							lectus lorem ipsum set in neque of grt hlodvb libero tellus loreum
+							Lorem ipsum temps us est amet lectus lorem ipsum set in neque of
+							grt hlodvb libero tellus loreum.
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 						</div>
 					</div>
 				</div>
@@ -122,7 +134,10 @@
 	.headline {
 		font-weight: 600;
 		font-size: 30px;
+<<<<<<< HEAD
 		line-height: 44px;
+=======
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 		text-align: center;
 	}
 	.description {
@@ -139,9 +154,38 @@
 	.accordion {
 		width: 100%;
 		.accordion-item {
+<<<<<<< HEAD
 			.accordion-header {
 				.accordion-button {
 					background-color: #031b27;
+=======
+			border: none;
+			.accordion-header {
+				.accordion-button {
+					border-radius: 0px;
+					background-color: #031b27;
+					color: #ffffff;
+					font-weight: 500;
+					font-size: 20px;
+					box-shadow: none;
+					&:focus {
+						box-shadow: none;
+						border-color: rgba(0, 0, 0, 0.125);
+					}
+					&::after {
+						background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+					}
+				}
+			}
+			.accordion-collapse {
+				border-radius: 0px;
+				.accordion-body {
+					border: none !important;
+					background-color: #031b27;
+					color: #ffb401;
+					font-weight: 400;
+					font-size: 18px;
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 				}
 			}
 		}

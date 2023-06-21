@@ -11,9 +11,9 @@ html {
 	scroll-behavior: smooth;
 }
 
-#app {
-	width: 100% !important;
-}
+// #app {
+// 	width: 100% !important;
+// }
 
 body {
 	font-family: $inter-font;
@@ -52,6 +52,9 @@ ul {
 	line-height: $section-headline-line-height;
 	color: $section-headline-text;
 	text-align: center;
+	@media screen and (max-width: 769px) {
+		margin: 0;
+	}
 }
 .section-sub-headline {
 	margin: 0px 225px;
@@ -60,6 +63,9 @@ ul {
 	line-height: $section-subheadline-line-height;
 	color: $section-subheadline-text;
 	text-align: center;
+	@media screen and (max-width: 769px) {
+		margin: 0;
+	}
 }
 
 .below-header-gap{

@@ -194,7 +194,13 @@ export default class FeedbackHistory extends Vue {
 			flex-direction: column;
 			justify-content: flex-start;
 			gap: 35px;
+			@media screen and (max-width: 769px) {
+				flex-basis: auto;
+			}
 			.rating {
+				@media screen and(max-width: 769px) {
+					text-align: center;
+				}
 				.icon {
 					width: 20px;
 					height: 20px;
@@ -207,18 +213,28 @@ export default class FeedbackHistory extends Vue {
 				font-size: $quotes-font-size;
 				font-weight: $quotes-font-weight;
 				color: $quotes-text;
+				@media screen and(max-width: 769px) {
+					text-align: center;
+				}
 			}
 			.client {
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
+				@media screen and(max-width: 769px) {
+					justify-content: space-evenly;
+				}
 				.details {
 					flex-grow: 1;
 					display: flex;
 					flex-direction: row;
 					justify-content: flex-start;
 					align-items: center;
+					@media screen and(max-width: 769px) {
+						flex-grow: unset;
+					}
+
 					.profile-image {
 						border-radius: 50%;
 					}
@@ -259,6 +275,11 @@ export default class FeedbackHistory extends Vue {
 			grid-template-rows: repeat(15, 20px);
 			grid-template-columns: repeat(15, 20px);
 			grid-gap: 10px;
+
+			@media screen and (max-width: 769px) {
+				display: none;
+			}
+
 			div > .client-image {
 				width: 100%;
 				height: 100%;

@@ -3,7 +3,11 @@
 		<div class="box">
 			<img
 				class="signup-banner"
+<<<<<<< HEAD
 				src="images/bifrost-signin-banner.png"
+=======
+				src="images/bifrost-signup-banner.png"
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 				alt="bifrost signup banner image"
 			/>
 		</div>
@@ -17,6 +21,7 @@
 					<h2 class="continue">
 						Fill the details bellow to submit register account.
 					</h2>
+<<<<<<< HEAD
 					<ValidationObserver v-slot="{ invalid }" ref="form">
 						<form
 							class="signup-form"
@@ -143,6 +148,37 @@
 							</button>
 						</form>
 					</ValidationObserver>
+=======
+
+					<form class="signup-form" method="POST">
+						<div class="group">
+							<div class="input-group">
+								<label class="label">First Name</label
+								><input type="text" placeholder="Your first name" />
+							</div>
+							<div class="input-group">
+								<label class="label">Last Name</label
+								><input type="text" placeholder="Your last name" />
+							</div>
+						</div>
+						<div class="input-group">
+							<label class="label">Email</label
+							><input type="email" placeholder="Your email" />
+						</div>
+						<div class="input-group">
+							<label class="label">Password</label
+							><input type="password" placeholder="Your password" />
+						</div>
+						<div class="go-terms-condition">
+							By signing in, you’re agree to our
+							<a href="#">Terms & Condition</a>
+							and <a href="#">Privacy Policy</a>.
+						</div>
+
+						<button type="submit" class="signup-btn">Continue</button>
+					</form>
+
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 					<div class="go-signup">
 						<span>Already have account?</span
 						><nuxt-link to="/signin">Signin</nuxt-link>
@@ -165,6 +201,7 @@ import { SIGNUP } from "~/utils/store/action.names";
 	components: {},
 })
 export default class Signup extends Vue {
+<<<<<<< HEAD
 	@Action(namespaced(NS_USER, SIGNUP)) signup;
 
 	formData = {
@@ -215,6 +252,8 @@ export default class Signup extends Vue {
 			});
 	}
 
+=======
+>>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 	handleBack() {
 		var fullPath = this.$nuxt.context.from;
 		if (fullPath) {
