@@ -1,5 +1,5 @@
 <template>
-    <div class="header" :class="{ 'primary-bg': toggleNavBackground }">
+    <div class="header" :class="{ 'none-bg': toggleNavBackground }">
         <div class="container">
             <nav class="navbar">
                 <nuxt-link class="navbar-brand" to="/">
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { Component, Vue, Getter } from "nuxt-property-decorator";
+import { Component, Vue, Getter, Watch } from "nuxt-property-decorator";
 import { GET_SETTINGS } from "../utils/store/getter.names";
 import { NS_SETTINGS } from "../utils/store/namespace.names";
 import { namespaced } from "../utils/utils";
@@ -74,20 +74,32 @@ export default class Header extends Vue {
     @Getter(namespaced(NS_SETTINGS, GET_SETTINGS)) getSettings;
 
     toggleNavBackground = false;
+    isHomePage = false;
 
     HOST = this.$config.HOST;
 
     handleNabvar() {
         const hero = document.querySelector(".hero-section");
         const navbar = document.querySelector(".navbar");
-        if (hero && navbar) {
+        if (hero && navbar && this.isHomePage === true) {
             var heroOffset = hero.offsetHeight;
             var scrollTop = document.documentElement.scrollTop;
             if (scrollTop > heroOffset) {
-                this.toggleNavBackground = true;
-            } else {
                 this.toggleNavBackground = false;
+            } else {
+                this.toggleNavBackground = true;
             }
+        }
+    }
+
+    @Watch("$route")
+    onRouteChange(oldVal, newVal) {
+        if (oldVal.path === "/") {
+            this.isHomePage = true;
+            this.toggleNavBackground = true;
+        } else {
+            this.isHomePage = false;
+            this.toggleNavBackground = false;
         }
     }
 
@@ -100,10 +112,10 @@ export default class Header extends Vue {
 <style scoped lang="scss">
 .header {
     position: fixed;
-		top:0;
+    top: 0;
     z-index: 99999999;
     width: 100%;
-    background: none;
+    background: $header-bg-primary;
     .navbar {
         .menu-links {
             .nav-link {
@@ -131,7 +143,7 @@ export default class Header extends Vue {
         }
     }
 }
-.primary-bg {
-    background: $header-bg-primary;
+.none-bg {
+    background: none;
 }
 </style>
