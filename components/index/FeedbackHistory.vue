@@ -192,12 +192,13 @@ export default class FeedbackHistory extends Vue {
 			margin: 30px 0px;
 		}
 		.details {
+			width: 100%;
 			flex-basis: 45%;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			gap: 35px;
-			@media screen and (max-width: 769px) {
+			@media (max-width: 769px) {
 				flex-basis: auto;
 			}
 			.rating {
@@ -255,6 +256,9 @@ export default class FeedbackHistory extends Vue {
 					}
 				}
 				.slider-buttons {
+					display: flex;
+					flex-direction: row;
+					gap: 10px;
 					button {
 						margin: 0px 5px;
 						width: 56px;
