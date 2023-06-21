@@ -39,6 +39,31 @@
 					</div>
 				</div>
 			</div>
+			<div class="mobile-steps">
+				<div
+					v-for="(step, index) in stepList"
+					:key="index"
+					class="step-wrapper"
+				>
+					<div class="step">
+						<div class="grad-content">
+							<div class="content">
+								<div class="details">
+									<div class="serial">
+										{{ index + 1 }}
+									</div>
+									<div class="title">
+										{{ step.title }}
+									</div>
+									<div class="description">
+										{{ step.description }}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -117,6 +142,9 @@ export default class Fractionalize extends Vue {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		@media (max-width: 769px) {
+			display: none;
+		}
 		.step-wrapper {
 			position: relative;
 			width: 50%;
@@ -290,6 +318,129 @@ export default class Fractionalize extends Vue {
 					padding: 10px;
 					background: $bg-primary;
 					border-radius: 16px;
+					.grad-content {
+						// Another div box to make a gradient border
+						width: 100%;
+						height: 100%;
+						padding: 1px;
+						background: linear-gradient(
+							152.14deg,
+							rgba(255, 247, 42, 0.7) 9.96%,
+							rgba(255, 180, 1, 0.7) 100%
+						);
+						border-radius: 8px;
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+						.content {
+							// This div box helps to make a gradient border combining with exact above class [.grad-content]
+							width: 100%;
+							height: 100%;
+							background: #0a1a1f;
+							border-radius: 8px;
+							.details {
+								height: 100%;
+								padding: 14px;
+								display: flex;
+								flex-direction: column;
+								justify-content: space-between;
+								align-items: center;
+								gap: 10px;
+								.serial {
+									width: 36px;
+									height: 36px;
+									border: 1px solid #ffb401;
+									border-radius: 50%;
+									color: #ffffff;
+									text-align: center;
+									vertical-align: middle;
+									line-height: 36px;
+								}
+								.title {
+									font-weight: 500;
+									font-size: 20px;
+									color: #ffffff;
+									text-align: center;
+								}
+								.description {
+									font-weight: 400;
+									font-size: 14px;
+									color: rgba(255, 255, 255, 0.8);
+									text-align: center;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.mobile-steps {
+		display: none;
+		@media (max-width: 769px) {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			.step-wrapper {
+				&:not(:last-child) {
+					.step {
+						::after {
+							// Circle shape before dotted straight line
+							content: "";
+							position: absolute;
+							z-index: 999999;
+							bottom: -5px;
+							left: 50%;
+							transform: translateX(-50%);
+							width: 10px;
+							height: 10px;
+							background: linear-gradient(
+								106.63deg,
+								#fff72a 11.5%,
+								#ffb401 88.5%
+							);
+							border-radius: 50%;
+						}
+					}
+				}
+				&:not(:first-child) {
+					.step {
+						::before {
+							// Triangle shape after dotted straight line
+							content: "";
+							position: absolute;
+							top: -5px;
+							left: 50%;
+							transform: translateX(-50%) rotate(90deg);
+							width: 0;
+							height: 0;
+							border-top: 5px solid transparent;
+							border-bottom: 5px solid transparent;
+							// Head of arrow towards right
+							border-left: 5px solid #ffb401;
+							border-right: 5px solid transparent;
+						}
+						.grad-content {
+							&::before {
+								// Dotted straight line with arrow for left step box where right is 0
+								content: "";
+								position: absolute;
+								top: -25px;
+								left: 50%;
+								transform: translateX(-50%);
+								// width: 20%;
+								height: 20px;
+								border: 2px solid #ffb401;
+								border-width: 0 2px 0 0;
+								border-style: dotted;
+							}
+						}
+					}
+				}
+				.step {
+					position: relative;
+
 					.grad-content {
 						// Another div box to make a gradient border
 						width: 100%;
