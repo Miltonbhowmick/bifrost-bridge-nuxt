@@ -81,6 +81,8 @@ export default class Header extends Vue {
     handleNabvar() {
         const hero = document.querySelector(".hero-section");
         const navbar = document.querySelector(".navbar");
+        // Below condition works only when we are in home page
+        // `isHomePage` tracks in which page we are now. This tracking is done in `onRouteChange` function
         if (hero && navbar && this.isHomePage === true) {
             var heroOffset = hero.offsetHeight;
             var scrollTop = document.documentElement.scrollTop;
@@ -92,6 +94,9 @@ export default class Header extends Vue {
         }
     }
 
+    // Handle header background color change by watching the route path.
+    // If we are in "/" (root path/directory like home page), we have null background color of header section.
+    // If we are in Non-home page, we have a background color of header section.
     @Watch("$route")
     onRouteChange(oldVal, newVal) {
         if (oldVal.path === "/") {
