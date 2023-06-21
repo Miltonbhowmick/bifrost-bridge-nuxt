@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { Component, Vue, Getter } from "nuxt-property-decorator";
+import { Component, Vue, Getter, Watch } from "nuxt-property-decorator";
 import { GET_SETTINGS } from "../utils/store/getter.names";
 import { NS_SETTINGS } from "../utils/store/namespace.names";
 import { namespaced } from "../utils/utils";
