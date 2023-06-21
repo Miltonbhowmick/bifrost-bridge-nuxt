@@ -52,8 +52,20 @@ ul {
 	line-height: $section-headline-line-height;
 	color: $section-headline-text;
 	text-align: center;
+	a{
+		font-size: $section-headline-font-size;
+	}
+	@media screen and (max-width: 992px) {
+		margin: 0px 50px 30px;
+	}
 	@media screen and (max-width: 769px) {
-		margin: 0;
+		margin: 25px 0px;
+		font-weight: $tablet-section-headline-font-weight;
+		font-size: $tablet-section-headline-font-size;
+		line-height: $tablet-section-headline-line-height;
+		a{
+			font-size: $tablet-section-headline-font-size;
+		}
 	}
 }
 .section-sub-headline {
@@ -63,6 +75,9 @@ ul {
 	line-height: $section-subheadline-line-height;
 	color: $section-subheadline-text;
 	text-align: center;
+	@media screen and (max-width: 992px) {
+		margin: 0px 30px;
+	}
 	@media screen and (max-width: 769px) {
 		margin: 0;
 	}

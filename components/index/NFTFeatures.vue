@@ -107,7 +107,9 @@ export default class NFTFeatures extends Vue {
 .feature-box {
 	margin: 150px 0px;
 	height: auto;
-
+	@media (max-width: 769px) {
+		margin: 40px 0px;
+	}
 	.list {
 		margin: 70px 0px;
 		display: flex;
@@ -115,6 +117,10 @@ export default class NFTFeatures extends Vue {
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 26px 16px;
+		@media (max-width: 769px) {
+			margin: 40px 0px;
+		}
+
 		.item {
 			flex-basis: 31.5%;
 			@media screen and(max-width: 769px) {

@@ -188,6 +188,9 @@ export default class FeedbackHistory extends Vue {
 		flex-direction: row;
 		justify-content: space-between;
 		gap: 15px;
+		@media (max-width: 769px) {
+			margin: 30px 0px;
+		}
 		.details {
 			flex-basis: 45%;
 			display: flex;

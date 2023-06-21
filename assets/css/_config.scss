@@ -15,6 +15,15 @@ $quotes-font-weight: 400;
 $owner-name-font-size: 20px;
 $owner-name-font-weight: 500;
 
+// For max width 769px - Tablet
+$tablet-section-headline-font-size: 25px;
+$tablet-section-subheadline-font-size: 16px;
+$tablet-section-headline-font-weight: 600;
+$tablet-section-subheadline-font-weight: 400;
+$tablet-section-headline-line-height: 30px;
+$tablet-section-subheadline-line-height: 18px;
+
+
 // Colors variables
 $text-primary: #FFFFFF;
 $bg-primary: #031B27;
@@ -46,6 +55,7 @@ $timeline-subheadline-text:#B4C5CB;
 $footer-describtion-text: rgba(206, 204, 214, 0.7);
 $footer-col-headline-text: #FFFFFF;
 $footer-col-subheadline-text:  #CECCD6;
+
 
 // Input field variables
 $input-field-padding: 10px 12px;

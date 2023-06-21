@@ -96,6 +96,9 @@ export default class TopCollections extends Vue {
 	flex-direction: column;
 	align-items: center;
 	gap: 8px;
+	@media (max-width: 769px) {
+		margin: 0;
+	}
 	.title-box {
 		margin: 70px 0px 50px 0px;
 		width: 100%;
@@ -107,10 +110,17 @@ export default class TopCollections extends Vue {
 			font-weight: 600;
 			font-size: 28px;
 			color: #ffffff;
+			@media (max-width: 769px) {
+				font-weight: 500;
+				font-size: 22px;
+			}
 		}
 		a {
 			font-weight: 400;
 			font-size: 18px;
+			@media (max-width: 769px) {
+				font-size: 15px;
+			}
 		}
 	}
 	.collection-list {
@@ -120,17 +130,25 @@ export default class TopCollections extends Vue {
 		flex-direction: column;
 		align-content: space-between;
 		flex-wrap: wrap;
-		gap: 20px 50px;
-		@media screen and (max-width: 769px) {
-			height: 500px;
+		@media (max-width: 769px) {
+			height: 480px;
 		}
 		.item {
-			width: 33%;
+			flex-basis: calc(33.3% - 20px);
+			margin-bottom: 20px;
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
 			align-items: center;
-			gap: 12px;
+			gap: 10px;
+			@media (max-width: 993px) {
+				width: 33.3%;
+			}
+			@media (max-width: 769px) {
+				flex-basis: calc(10% - 10px);
+				margin-bottom: 10px;
+				width: 50%;
+			}
 			.serial {
 				margin: 0;
 				font-weight: 600;
