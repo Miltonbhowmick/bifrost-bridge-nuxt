@@ -77,6 +77,9 @@
 		margin: 50px 0px;
 		overflow-x: auto;
 		border-radius: 25px;
+		@media (max-width: 480px) {
+			margin: 30px 0px;
+		}
 		.table {
 			border-collapse: collapse;
 			border-radius: 25px;
@@ -85,6 +88,9 @@
 			td {
 				border: none;
 				padding: 30px 25px;
+				@media (max-width: 480px) {
+					padding: 10px 20px;
+				}
 			}
 			td {
 				background: rgba(59, 24, 119, 0.1);

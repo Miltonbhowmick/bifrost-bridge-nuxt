@@ -136,6 +136,11 @@ export default class Fractionalize extends Vue {
 		font-size: 28px;
 		color: #ffffff;
 		text-align: left;
+		@media (max-width: 480px) {
+			margin: 30px 0px;
+			font-size: 18px;
+			font-weight: 500;
+		}
 	}
 	.steps {
 		width: 103%;
@@ -481,14 +486,14 @@ export default class Fractionalize extends Vue {
 									line-height: 36px;
 								}
 								.title {
+									font-size: 16px;
 									font-weight: 500;
-									font-size: 20px;
 									color: #ffffff;
 									text-align: center;
 								}
 								.description {
 									font-weight: 400;
-									font-size: 14px;
+									font-size: 12px;
 									color: rgba(255, 255, 255, 0.8);
 									text-align: center;
 								}

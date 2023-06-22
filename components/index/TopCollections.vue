@@ -107,6 +107,7 @@ export default class TopCollections extends Vue {
 		justify-content: space-between;
 		align-items: center;
 		h1 {
+			margin: 0;
 			font-weight: 600;
 			font-size: 28px;
 			color: #ffffff;
@@ -114,12 +115,18 @@ export default class TopCollections extends Vue {
 				font-weight: 500;
 				font-size: 22px;
 			}
+			@media (max-width: 480px) {
+				font-size: 14px;
+			}
 		}
 		a {
 			font-weight: 400;
 			font-size: 18px;
 			@media (max-width: 769px) {
 				font-size: 15px;
+			}
+			@media (max-width: 480px) {
+				font-size: 10px;
 			}
 		}
 	}
@@ -132,6 +139,12 @@ export default class TopCollections extends Vue {
 		flex-wrap: wrap;
 		@media (max-width: 769px) {
 			height: 480px;
+		}
+		@media (max-width: 480px) {
+			height: 380px;
+		}
+		@media (max-width: 376px) {
+			height: 320px;
 		}
 		.item {
 			flex-basis: calc(33.3% - 20px);
@@ -154,9 +167,17 @@ export default class TopCollections extends Vue {
 				font-weight: 600;
 				font-size: 24px;
 				color: #ffffff;
+				@media (max-width: 480px) {
+					font-size: 14px;
+					font-family: Inter;
+					font-weight: 500;
+				}
 			}
 			.nft-image {
 				border-radius: 8px;
+				@media (max-width: 480px) {
+					width: 30%;
+				}
 			}
 			.info {
 				display: flex;
@@ -168,12 +189,19 @@ export default class TopCollections extends Vue {
 					font-weight: 500;
 					font-size: 20px;
 					color: #ffffff;
+					@media (max-width: 480px) {
+						font-size: 12px;
+					}
 				}
 				.price {
 					margin: 0;
 					font-weight: 500;
 					font-size: 16px;
 					color: rgba(255, 255, 255, 0.8);
+					@media (max-width: 480px) {
+						font-weight: 400;
+						font-size: 10px;
+					}
 				}
 			}
 		}

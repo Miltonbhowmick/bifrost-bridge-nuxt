@@ -173,7 +173,7 @@ export default class Footer extends Vue {
 		margin-top: 10px;
 		width: 50%;
 		@media (max-width: 769px) {
-			width: 100%;
+			width: 80%;
 		}
 		input {
 			padding: 14px 8px;
@@ -182,6 +182,9 @@ export default class Footer extends Vue {
 			border-radius: 8px;
 			background: none;
 			color: rgba(255, 255, 255, 0.7);
+			@media (max-width: 480px) {
+				padding: 12px 8px;
+			}
 		}
 		button {
 			position: absolute;
@@ -194,6 +197,9 @@ export default class Footer extends Vue {
 			font-weight: 500;
 			font-size: 14px;
 			color: #ffffff;
+			@media (max-width: 480px) {
+				top: 8px;
+			}
 		}
 	}
 	.community-box {
@@ -209,6 +215,9 @@ export default class Footer extends Vue {
 			@media (max-width: 769px) {
 				font-weight: 600;
 				font-size: 20px;
+			}
+			@media (max-width: 480px) {
+				font-size: 16px;
 			}
 		}
 		.social-links {

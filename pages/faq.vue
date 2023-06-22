@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="faq below-header-gap">
-			<h1 class="headline">Frequently Ask Questions</h1>
+			<h1 class="section-headline">Frequently Ask Questions</h1>
 			<div class="description">
 				<h2>
 					Pellentesque cras adipiscing tempus libero vel nullam mauris tellus.
@@ -131,6 +131,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 30px;
+<<<<<<< HEAD
 	.headline {
 		font-weight: 600;
 		font-size: 30px;
@@ -139,7 +140,12 @@
 =======
 >>>>>>> 7ff17ad (Fixed width issue for table and alubmes and top collections list. These were creating design forced less width problem)
 		text-align: center;
+=======
+	@media (max-width: 769px) {
+		margin: 65px 0px;
+>>>>>>> 8cfb459 (Added mobile design and fixed designs issues on mobile and web)
 	}
+
 	.description {
 		h2 {
 			margin: 0;

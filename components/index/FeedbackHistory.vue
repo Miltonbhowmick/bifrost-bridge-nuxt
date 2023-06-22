@@ -23,20 +23,18 @@
 						{{ imageItems[0].quotes }}
 					</p>
 					<div class="client">
-						<div class="details">
-							<img
-								:src="imageItems[0].imageSrc"
-								class="profile-image"
-								alt="profile-image"
-								width="40"
-								height="40"
-							/>
-							<div class="info">
-								<h3 class="name">{{ imageItems[0].name }}</h3>
-								<h4 class="position">
-									{{ imageItems[0].position }}
-								</h4>
-							</div>
+						<img
+							:src="imageItems[0].imageSrc"
+							class="profile-image"
+							alt="profile-image"
+							width="40"
+							height="40"
+						/>
+						<div class="info">
+							<h3 class="name">{{ imageItems[0].name }}</h3>
+							<h4 class="position">
+								{{ imageItems[0].position }}
+							</h4>
 						</div>
 						<div class="slider-buttons">
 							<button @click="handleSlider('prev')">
@@ -201,6 +199,9 @@ export default class FeedbackHistory extends Vue {
 			@media (max-width: 769px) {
 				flex-basis: auto;
 			}
+			@media (max-width: 480px) {
+				gap: 25px;
+			}
 			.rating {
 				@media screen and(max-width: 769px) {
 					text-align: center;
@@ -220,38 +221,40 @@ export default class FeedbackHistory extends Vue {
 				@media screen and(max-width: 769px) {
 					text-align: center;
 				}
+				@media (max-width: 480px) {
+					font-size: $mobile-rating-star-size;
+					font-weight: $mobile-quotes-font-size;
+					min-height: unset;
+				}
 			}
 			.client {
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
-				@media screen and(max-width: 769px) {
+				@media (max-width: 769px) {
 					justify-content: space-evenly;
 				}
-				.details {
-					flex-grow: 1;
-					display: flex;
-					flex-direction: row;
-					justify-content: flex-start;
-					align-items: center;
-					@media screen and(max-width: 769px) {
-						flex-grow: unset;
-					}
-
-					.profile-image {
-						border-radius: 50%;
-					}
-					.info {
-						.name {
-							font-weight: 500;
-							font-size: 20px;
-							color: #fff;
-						}
-						.position {
-							font-weight: 500;
+				.profile-image {
+					border-radius: 50%;
+				}
+				.info {
+					.name {
+						font-weight: 500;
+						font-size: 20px;
+						color: #fff;
+						@media (max-width: 480px) {
 							font-size: 16px;
-							color: rgba(255, 255, 255, 0.7);
+							font-weight: 500;
+						}
+					}
+					.position {
+						font-weight: 500;
+						font-size: 16px;
+						color: rgba(255, 255, 255, 0.7);
+						@media (max-width: 480px) {
+							font-size: 12px;
+							font-weight: 500;
 						}
 					}
 				}
@@ -267,6 +270,10 @@ export default class FeedbackHistory extends Vue {
 						backdrop-filter: blur(4px);
 						border: none;
 						border-radius: 28px;
+						@media (max-width: 480px) {
+							width: 28px;
+							height: 28px;
+						}
 						.icon {
 							width: 40%;
 							font-size: 22px;

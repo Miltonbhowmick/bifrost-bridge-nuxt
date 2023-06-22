@@ -85,6 +85,14 @@ export default class Header extends Vue {
 	}
 
 	mounted() {
+		console.log("=====route m");
+		if (this.$route.path === "/") {
+			this.isHomePage = true;
+			this.toggleNavBackground = true;
+		} else {
+			this.isHomePage = false;
+			this.toggleNavBackground = false;
+		}
 		window.addEventListener("scroll", this.handleNabvar);
 	}
 }
