@@ -168,6 +168,9 @@ export default class Header extends Vue {
 	}
 
 	mounted() {
+		if (this.$route.path === "/") {
+			this.isHomePage = true;
+		}
 		window.addEventListener("scroll", this.handleNabvar);
 	}
 }
