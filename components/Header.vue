@@ -1,5 +1,5 @@
 <template>
-	<div class="header" :class="{ 'primary-bg': toggleNavBackground }">
+	<div class="header" :class="{ 'none-bg': toggleNavBackground }">
 		<div class="container">
 			<nav class="navbar">
 				<nuxt-link class="navbar-brand" to="/">
@@ -42,7 +42,7 @@
 					</li>
 					<li class="nav-item">
 						<nuxt-link
-							to="/signin"
+							to="/signup"
 							class="nav-link cursor-pointer text-capitalize"
 							>Sign In</nuxt-link
 						>
@@ -67,32 +67,36 @@ export default class Header extends Vue {
 	@Getter(namespaced(NS_SETTINGS, GET_SETTINGS)) getSettings;
 
 	toggleNavBackground = false;
+	isHomePage = false;
 
 	HOST = this.$config.HOST;
 
 	handleNabvar() {
 		const hero = document.querySelector(".hero-section");
 		const navbar = document.querySelector(".navbar");
-		if (hero && navbar) {
+		if (hero && navbar && this.isHomePage === true) {
 			var heroOffset = hero.offsetHeight;
 			var scrollTop = document.documentElement.scrollTop;
 			if (scrollTop > heroOffset) {
-				this.toggleNavBackground = true;
-			} else {
 				this.toggleNavBackground = false;
+			} else {
+				this.toggleNavBackground = true;
 			}
 		}
 	}
 
-	mounted() {
-		console.log("=====route m");
-		if (this.$route.path === "/") {
+	@Watch("$route")
+	onRouteChange(oldVal, newVal) {
+		if (oldVal.path === "/") {
 			this.isHomePage = true;
 			this.toggleNavBackground = true;
 		} else {
 			this.isHomePage = false;
 			this.toggleNavBackground = false;
 		}
+	}
+
+	mounted() {
 		window.addEventListener("scroll", this.handleNabvar);
 	}
 }
@@ -104,7 +108,7 @@ export default class Header extends Vue {
 	top: 0;
 	z-index: 99999999;
 	width: 100%;
-	background: none;
+	background: $header-bg-primary;
 	.navbar {
 		.menu-links {
 			.nav-link {
@@ -128,7 +132,7 @@ export default class Header extends Vue {
 		}
 	}
 }
-.primary-bg {
-	background: $header-bg-primary;
+.none-bg {
+	background: none;
 }
 </style>
