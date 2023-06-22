@@ -10,19 +10,19 @@
 		<div class="box">
 			<div class="content">
 				<div class="info">
-					<h1 class="welcome">Welcome</h1>
+					<!-- <h1 class="welcome">Welcome</h1> -->
 					<img
 						class="company-logo"
 						src="images/bifrost_logo.png"
 						alt="bifrost-logo"
 					/>
-					<h2 class="continue">Sign in to continue</h2>
+					<h2 class="continue">Forget your password?</h2>
 
 					<ValidationObserver
 						class="signin-form"
 						v-slot="{ invalid }"
 						tag="form"
-						@submit.prevent="handleSignin"
+						@submit.prevent="handleForgetPassword"
 					>
 						<ValidationProvider
 							rules="required"
@@ -33,7 +33,7 @@
 							<div class="input-group">
 								<label class="label">Email</label
 								><input
-									v-model="formData.username"
+									v-model="formData.email"
 									name="email"
 									type="email"
 									placeholder="Your Email"
@@ -46,39 +46,6 @@
 								* {{ errors[0] }}
 							</small>
 						</ValidationProvider>
-						<ValidationProvider
-							rules="required|min:8"
-							v-slot="{ errors }"
-							tag="div"
-							class="mb-3"
-						>
-							<div class="input-group">
-								<label class="label">Password</label
-								><input
-									v-model="formData.password"
-									type="password"
-									name="password"
-									placeholder="Your Password"
-									:class="{
-										'red-border': errors[0],
-									}"
-								/>
-							</div>
-							<small v-if="errors.length" class="error">
-								* {{ errors[0] }}
-							</small>
-						</ValidationProvider>
-						<div class="forget-remember">
-							<div class="group check-group">
-								<input id="forgetInput" type="checkbox" />
-								<label class="label" for="forgetInput">Remember Me</label>
-							</div>
-							<div class="group">
-								<nuxt-link to="/forgot-password" class="forget-password-link"
-									>Forgot Password?</nuxt-link
-								>
-							</div>
-						</div>
 
 						<div
 							class="form-input error my-2"
@@ -87,36 +54,13 @@
 						></div>
 
 						<button type="submit" :disabled="invalid" class="login-btn">
-							{{ loading ? "Please wait..." : "Sign in" }}
+							{{ loading ? "Please wait..." : "Continue" }}
 						</button>
 					</ValidationObserver>
-					<div class="social-continue-border">
-						<div class="border"></div>
-						<div class="text">or continue with</div>
-						<div class="border"></div>
-					</div>
-					<div class="social-links">
-						<ul>
-							<li>
-								<a href="#"
-									><img
-										src="images/socials/facebook-signin.png"
-										alt="facebook-signin"
-								/></a>
-							</li>
-							<li>
-								<a href="#"
-									><img
-										src="images/socials/google-signin.png"
-										alt="google-signin"
-										width="10"
-								/></a>
-							</li>
-						</ul>
-					</div>
+
 					<div class="go-signup">
-						<span>Don,t have an account?</span
-						><nuxt-link to="/signup">Sign up</nuxt-link>
+						<span>Already have account?</span
+						><nuxt-link to="/signin">Sign in</nuxt-link>
 					</div>
 				</div>
 			</div>
@@ -128,70 +72,43 @@
 import { Component, Vue, Action } from "nuxt-property-decorator";
 import { namespaced } from "~/utils/utils";
 import { NS_USER } from "~/utils/store/namespace.names";
-import { SIGNIN, SEND_VERIFICATION_CODE } from "~/utils/store/action.names";
+import { SEND_VERIFICATION_CODE } from "~/utils/store/action.names";
 
 @Component({
-	name: "Signin",
+	name: "ForgetPassword",
 	layout: "custom",
 	components: {},
 })
-export default class Signin extends Vue {
-	@Action(namespaced(NS_USER, SIGNIN)) signin;
+export default class ForgetPassword extends Vue {
 	@Action(namespaced(NS_USER, SEND_VERIFICATION_CODE)) sendVerificationCode;
 
 	error_msg = "";
 	loading = false;
 
 	formData = {
-		username: "",
-		password: "",
+		email: "",
 	};
 
-	commonSendVerificationCode(data, popup = false) {
-		this.sendVerificationCode({
-			email: data.email,
-		}).then((data) => {
-			if (popup == true) {
-				var msg = `<div class='t-custom-class'><div>Successfully send verification code to your email!</div></div>`;
-				this.$toast.success(msg);
-			}
-		});
-	}
-
-	handleSignin() {
+	handleForgetPassword() {
 		this.loading = true;
-		this.signin(this.formData)
+		this.sendVerificationCode(this.formData)
 			.then((data) => {
-				let token = data.token;
-				this.userProfile = data;
-				if (token === null && data.is_email_verified == false) {
-					this.commonSendVerificationCode(data);
-					this.$router.push({
-						path: "/validate-otp",
-						name: "validate-otp",
-						query: {
-							email: data.email,
-							from: "email_change",
-						},
-					});
-				} else {
-					this.$router.push({ name: "index" });
-				}
+				this.$router.push({
+					name: "forgot-password-reset",
+					query: {
+						email: this.formData.email,
+					},
+				});
 			})
 			.catch((e) => {
 				this.loading = false;
 				this.error_msg = "";
 				var err_msg = "";
-				if (e.response.status === 400) {
-					for (const [key, value] of Object.entries(e.response.data)) {
-						const err = `<p>${value}</p>`;
-						err_msg = err_msg + err;
-					}
-					this.error_msg = err_msg;
-				} else {
-					var msg = `<div class='t-custom-class'><div>{{ $t('signin_something_went_wrong') }}</div></div>`;
-					this.$toast.error(msg);
+				for (const [key, value] of Object.entries(e.response.data)) {
+					const err = `<p>${value}</p>`;
+					err_msg = err_msg + err;
 				}
+				this.error_msg = err_msg;
 			});
 	}
 }
