@@ -1,6 +1,6 @@
 <template>
 	<div class="signup">
-		<div class="box">
+		<div class="box banner-box">
 			<img
 				class="signup-banner"
 				src="images/bifrost-signup-banner.png"
@@ -28,7 +28,7 @@
 									rules="required"
 									v-slot="{ errors }"
 									tag="div"
-									class="mb-3"
+									class="mb-2"
 								>
 									<div class="input-group">
 										<label class="label">First Name</label
@@ -50,7 +50,7 @@
 									rules="required"
 									v-slot="{ errors }"
 									tag="div"
-									class="mb-3"
+									class="mb-2"
 								>
 									<div class="input-group">
 										<label class="label">Last Name</label
@@ -70,7 +70,7 @@
 								rules="required|email"
 								v-slot="{ errors }"
 								tag="div"
-								class="mb-3"
+								class="mb-2"
 							>
 								<div class="input-group">
 									<label class="label">Email</label
@@ -91,7 +91,7 @@
 								rules="required|min:8"
 								v-slot="{ errors }"
 								tag="div"
-								class="mb-3"
+								class="mb-2"
 							>
 								<div class="input-group">
 									<label class="label">Password</label
@@ -111,7 +111,7 @@
 								rules="required|confirmed:password"
 								v-slot="{ errors }"
 								tag="div"
-								class="mb-3"
+								class="mb-2"
 							>
 								<div class="input-group">
 									<label class="label">Retype Password</label
@@ -232,6 +232,15 @@ export default class Signup extends Vue {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	@media (max-width: 769px) {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.banner-box {
+		@media (max-width: 769px) {
+			display: none;
+		}
+	}
 	.box {
 		flex-basis: 50%;
 		.signup-banner {
@@ -252,6 +261,10 @@ export default class Signup extends Vue {
 				flex-direction: column;
 				align-items: flex-start;
 				gap: 14px;
+				@media (max-width: 769px) {
+					width: 85%;
+					gap: 10px;
+				}
 				.back-box {
 					position: relative;
 					&::before {
@@ -269,17 +282,30 @@ export default class Signup extends Vue {
 						font-weight: 400;
 						font-size: 18px;
 						color: #8692a6;
+						@media (max-width: 480px) {
+							font-size: 14px;
+						}
 					}
 				}
 				.welcome {
 					font-weight: 500;
 					font-size: 24px;
 					color: #ffffff;
+					@media (max-width: 480px) {
+						font-size: 18px;
+					}
 				}
 				.continue {
 					font-weight: 500;
 					font-size: 16px;
 					color: #8692a6;
+					@media (max-width: 480px) {
+						font-size: 14px;
+					}
+				}
+				span {
+					// validation provider creates this span
+					width: 100%;
 				}
 				.signup-form {
 					width: 100%;
@@ -287,9 +313,16 @@ export default class Signup extends Vue {
 					flex-direction: column;
 					justify-content: flex-start;
 					gap: 15px;
+					@media (max-width: 769px) {
+						gap: 3px;
+					}
 					.group {
 						display: flex;
 						gap: 15px;
+						@media (max-width: 769px) {
+							flex-direction: column;
+							gap: 0px;
+						}
 					}
 					.input-group {
 						display: flex;
@@ -300,12 +333,25 @@ export default class Signup extends Vue {
 							font-weight: 400;
 							font-size: 14px;
 							color: #ffffff;
+							@media (max-width: 480px) {
+								font-size: 12px;
+							}
 						}
 						input {
 							padding: $input-field-padding;
 							background: #ffffff;
 							border: none;
 							border-radius: $input-field-br-radius;
+							&::placeholder {
+								@media (max-width: 480px) {
+									font-size: 12px;
+								}
+							}
+						}
+						@media (max-width: 769px) {
+							input {
+								padding: 10px 4px !important;
+							}
 						}
 					}
 					.go-terms-condition {
@@ -313,10 +359,16 @@ export default class Signup extends Vue {
 						font-size: 14px;
 						color: #bdbdbd;
 						margin-right: 3px;
+						@media (max-width: 480px) {
+							font-size: 12px;
+						}
 						a {
 							font-weight: 500;
 							font-size: 14px;
 							color: #ffb401;
+							@media (max-width: 480px) {
+								font-size: 12px;
+							}
 						}
 					}
 					.signup-btn {
@@ -327,6 +379,11 @@ export default class Signup extends Vue {
 						color: #ffffff;
 						font-weight: 500;
 						font-size: 20px;
+						@media (max-width: 480px) {
+							margin-top: 6px;
+							padding: 8px 28px;
+							font-size: 16px;
+						}
 					}
 				}
 				.go-signup {

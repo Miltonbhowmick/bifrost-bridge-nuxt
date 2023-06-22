@@ -224,7 +224,7 @@ export default class Header extends Vue {
 			}
 			.menus {
 				position: absolute;
-				top: 50px;
+				top: 62px;
 				left: 0;
 				right: 0;
 				width: 100%;

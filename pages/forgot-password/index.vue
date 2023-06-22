@@ -1,6 +1,6 @@
 <template>
 	<div class="signin">
-		<div class="box">
+		<div class="box banner-box">
 			<img
 				class="signin-banner"
 				src="images/bifrost-signin-banner.png"
@@ -120,8 +120,17 @@ export default class ForgetPassword extends Vue {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	@media (max-width: 769px) {
+		flex-direction: column;
+		justify-content: center;
+	}
 	.box {
 		flex-basis: 50%;
+		&.banner-box {
+			@media (max-width: 769px) {
+				display: none;
+			}
+		}
 		.signin-banner {
 			// Image on the left side of the signin screen
 			width: 100%;
@@ -134,21 +143,32 @@ export default class ForgetPassword extends Vue {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+
 			.info {
 				width: 60%;
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
 				gap: 14px;
-				.welcome {
-					font-weight: 600;
-					font-size: 28px;
-					color: #ffffff;
+				@media (max-width: 769px) {
+					width: 85%;
+					align-items: center;
 				}
+				// .welcome {
+				// 	font-weight: 600;
+				// 	font-size: 28px;
+				// 	color: #ffffff;
+				// 	@media (max-width: 480px) {
+				// 		font-size: 18px;
+				// 	}
+				// }
 				.continue {
 					font-weight: 500;
 					font-size: 24px;
 					color: #ffffff;
+					@media (max-width: 480px) {
+						font-size: 14px;
+					}
 				}
 				.signin-form {
 					width: 100%;
@@ -156,6 +176,9 @@ export default class ForgetPassword extends Vue {
 					flex-direction: column;
 					justify-content: flex-start;
 					gap: 15px;
+					@media (max-width: 480px) {
+						gap: 8px;
+					}
 					.input-group {
 						display: flex;
 						flex-direction: column;
@@ -165,11 +188,19 @@ export default class ForgetPassword extends Vue {
 							font-weight: 400;
 							font-size: 14px;
 							color: #ffffff;
+							@media (max-width: 480px) {
+								font-size: 12px;
+							}
 						}
 						input {
 							padding: $input-field-padding;
 							background: #ffffff;
 							border-radius: $input-field-br-radius;
+							&::placeholder {
+								@media (max-width: 480px) {
+									font-size: 12px;
+								}
+							}
 						}
 					}
 					.forget-remember {
@@ -194,6 +225,9 @@ export default class ForgetPassword extends Vue {
 								font-weight: 500;
 								font-size: 12px;
 								color: #ffffff;
+								@media (max-width: 480px) {
+									font-size: 12px;
+								}
 							}
 						}
 					}
@@ -205,6 +239,11 @@ export default class ForgetPassword extends Vue {
 						color: #ffffff;
 						font-weight: 500;
 						font-size: 20px;
+						@media (max-width: 480px) {
+							margin-top: 6px;
+							padding: 8px 28px;
+							font-size: 16px;
+						}
 					}
 				}
 				.social-continue-border {

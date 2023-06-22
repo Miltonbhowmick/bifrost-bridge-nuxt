@@ -141,7 +141,7 @@ export default class TopCollections extends Vue {
 			height: 480px;
 		}
 		@media (max-width: 480px) {
-			height: 380px;
+			height: 400px;
 		}
 		@media (max-width: 376px) {
 			height: 320px;

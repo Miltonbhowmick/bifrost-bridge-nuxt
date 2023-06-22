@@ -1,6 +1,6 @@
 <template>
 	<div class="signup">
-		<div class="box">
+		<div class="box banner-box">
 			<img
 				class="signup-banner"
 				src="images/bifrost-signin-banner.png"
@@ -204,6 +204,15 @@ export default class ValidateOtp extends Vue {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	@media (max-width: 769px) {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.banner-box {
+		@media (max-width: 769px) {
+			display: none;
+		}
+	}
 	.box {
 		flex-basis: 50%;
 		.signup-banner {
@@ -222,16 +231,26 @@ export default class ValidateOtp extends Vue {
 				flex-direction: column;
 				align-items: flex-start;
 				gap: 20px;
-
+				@media (max-width: 769px) {
+					width: 85%;
+					align-items: center;
+					gap: 6px;
+				}
 				.welcome {
 					font-weight: 500;
 					font-size: 24px;
 					color: #ffffff;
+					@media (max-width: 480px) {
+						font-size: 18px;
+					}
 				}
 				.continue {
 					font-weight: 500;
 					font-size: 16px;
 					color: #8692a6;
+					@media (max-width: 480px) {
+						font-size: 14px;
+					}
 				}
 				.signup-form {
 					width: 100%;
@@ -265,10 +284,19 @@ export default class ValidateOtp extends Vue {
 						color: #ffffff;
 						font-weight: 500;
 						font-size: 20px;
+						@media (max-width: 480px) {
+							margin-top: 8px;
+							padding: 8px 28px;
+							font-size: 16px;
+						}
 					}
 				}
 				.go-signup {
 					width: 100%;
+					@media (max-width: 480px) {
+						text-align: center;
+					}
+
 					span {
 						font-weight: 500;
 						font-size: 14px;
@@ -296,12 +324,19 @@ export default class ValidateOtp extends Vue {
 		.second {
 			width: 20px;
 		}
+		@media (max-width: 480px) {
+			text-align: center;
+		}
 	}
 	.disable-link {
 		pointer-events: none;
 	}
 	.resend-code {
 		margin-top: 0px;
+		@media (max-width: 480px) {
+			margin: 0px;
+			text-align: center;
+		}
 	}
 }
 </style>
