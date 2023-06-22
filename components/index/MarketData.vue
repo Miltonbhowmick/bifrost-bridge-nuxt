@@ -133,8 +133,6 @@
 					}
 					.name {
 						.content {
-							img {
-							}
 							h6 {
 								margin: 0;
 								font-weight: 500;

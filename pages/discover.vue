@@ -242,4 +242,18 @@ export default class Discover extends Vue {
 		color: #ffb401 !important;
 	}
 }
+
+.carousel-3d-container {
+	height: 222px !important;
+	.carousel-3d-slide {
+		background: none;
+		height: 222px !important;
+	}
+}
+
+::v-deep .carousel-3d-controls {
+	a {
+		color: #ffb401 !important;
+	}
+}
 </style>
