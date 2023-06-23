@@ -4,6 +4,9 @@
 			<h1 class="headline">
 				{{ getCurrentPage.hero_title }}
 			</h1>
+			<h2 class="subtitle">
+				{{ getCurrentPage.hero_subtitle }}
+			</h2>
 			<div class="content-body">
 				<div
 					v-for="(comp, idx) in getCurrentPage.body"
