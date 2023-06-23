@@ -14,7 +14,7 @@
 			</div>
 			<div class="ellipse-shape">
 				<div class="get-started-box">
-					<a class="cursor-pointer">Get Started</a>
+					<nuxt-link to="/signup" class="cursor-pointer">Get Started</nuxt-link>
 				</div>
 			</div>
 		</div>
@@ -38,6 +38,14 @@ export default class Campaign extends Vue {
 	position: relative;
 	margin: 100px 0px;
 	border-radius: 8px;
+	@media (max-width: 993px) {
+		margin: 0;
+		height: 300px;
+	}
+	@media (max-width: 769px) {
+		margin: 0;
+		height: 150px;
+	}
 	.info-box {
 		margin: 50px 0px;
 		padding: 80px 150px 195px 150px;
@@ -47,15 +55,30 @@ export default class Campaign extends Vue {
 		flex-direction: column;
 		align-items: center;
 		gap: 15px;
+		@media (max-width: 993px) {
+			padding: 30px 0px;
+		}
+		@media (max-width: 769px) {
+			padding: 20px 0px;
+			gap: 6px;
+		}
 		.headline {
 			font-weight: 600;
 			font-size: 30px;
 			color: #1f6273;
+			@media (max-width: 769px) {
+				font-weight: 600;
+				font-size: 14px;
+			}
 		}
 		.sub-headline {
 			font-weight: 600;
 			font-size: 36px;
 			color: #1f6273;
+			@media (max-width: 769px) {
+				font-weight: 600;
+				font-size: 16px;
+			}
 		}
 	}
 	.ellipse-shape {
@@ -72,8 +95,22 @@ export default class Campaign extends Vue {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		@media (max-width: 993px) {
+			top: 55%;
+			width: 400px;
+			height: 384px;
+		}
+		@media (max-width: 769px) {
+			width: 195px;
+			height: 190px;
+		}
 		.get-started-box {
 			margin-top: 75px;
+			@media (max-width: 993px) {
+			}
+			@media (max-width: 769px) {
+				margin-top: 25px;
+			}
 			a {
 				padding: 15px 35px;
 				color: #ffffff;
@@ -81,6 +118,11 @@ export default class Campaign extends Vue {
 				border-radius: 20px;
 				font-weight: 500;
 				font-size: 20px;
+				@media (max-width: 769px) {
+					padding: 5px 15px;
+					font-weight: 500;
+					font-size: 8px;
+				}
 			}
 		}
 	}

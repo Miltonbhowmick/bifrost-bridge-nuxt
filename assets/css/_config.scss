@@ -10,10 +10,33 @@ $section-headline-line-height: 45px;
 $section-subheadline-line-height: 28px;
 
 $rating-star-size: 22px;
-$quotes-font-size: 24px;
+$quotes-font-size: 18px;
 $quotes-font-weight: 400;
 $owner-name-font-size: 20px;
 $owner-name-font-weight: 500;
+
+// For max width 769px - Tablet
+$tablet-section-headline-font-size: 25px;
+$tablet-section-subheadline-font-size: 16px;
+$tablet-section-headline-font-weight: 600;
+$tablet-section-subheadline-font-weight: 400;
+$tablet-section-headline-line-height: 30px;
+$tablet-section-subheadline-line-height: 18px;
+
+// For max width 769px - Mobile
+$mobile-section-headline-font-size: 14px;
+$mobile-section-subheadline-font-size: 12px;
+$mobile-section-headline-font-weight: 500;
+$mobile-section-subheadline-font-weight: 400;
+$mobile-section-headline-line-height: 20px;
+$mobile-section-subheadline-line-height: 20px;
+$mobile-rating-star-size: 16px;
+$mobile-quotes-font-size: 12px;
+$mobile-quotes-font-weight: 400;
+$mobile-owner-name-font-size: 14px;
+$mobile-owner-name-font-weight: 500;
+
+
 
 // Colors variables
 $text-primary: #FFFFFF;
@@ -47,9 +70,11 @@ $footer-describtion-text: rgba(206, 204, 214, 0.7);
 $footer-col-headline-text: #FFFFFF;
 $footer-col-subheadline-text:  #CECCD6;
 
+
 // Input field variables
 $input-field-padding: 10px 12px;
 $input-field-br-radius: 4px;
+
 
 // Responsive variables
 $smart-small-phone-breakpoint-max: 376px;

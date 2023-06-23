@@ -2,13 +2,12 @@
 	<div class="container">
 		<div class="feature-box">
 			<h2 class="section-headline">
-				Discover Today's Cryptocurrency Prices Soaring to New Heights by Market
-				Cap!
+				Supercharge Your NFT and Crypto Game with These Tools
 			</h2>
 			<h3 class="section-sub-headline">
 				It's important to conduct thorough research and exercise caution when
-				making investment decisions in the crypto market.
-				<a href="#" class="read-more-link">Read More</a>
+				making investment decisions in the crypto market
+				<a href="#" class="read-more-link text-lowercase">Read More</a>
 			</h3>
 			<div class="list">
 				<div v-for="(item, index) in items" :key="index" class="item">
@@ -21,8 +20,11 @@
 						<img :src="item.icon" alt="feature-bg" />
 						<h6 class="name">{{ item.name }}</h6>
 						<p class="description">
-							{{ item.description }}
-							<a v-if="item.readMore" href="#" class="read-more-link"
+							{{ item.description }}<br />
+							<a
+								v-if="item.readMore"
+								href="#"
+								class="read-more-link text-capitalize"
 								>read more</a
 							>
 						</p>
@@ -64,31 +66,33 @@ export default class NFTFeatures extends Vue {
 		{
 			backgroundImage: img2,
 			icon: "images/icons/cake.png",
-			name: "Fractionalization",
+			name: "NFT Fractionalization",
 			description:
-				"This feature allows users to divide their NFTs into smaller",
+				"This feature allows users to divide their NFTs into smaller fractions and tokenize them, allowing for crypto-like trading.",
 			readMore: true,
 		},
 		{
 			backgroundImage: img3,
 			icon: "images/icons/spin.png",
 			name: "Exchange",
-			description: "Our platform offers a decentralized exchange where",
+			description:
+				"Our platform offers a decentralized exchange where you can trade NFTs and crypto",
 			readMore: true,
 		},
 		{
 			backgroundImage: img4,
 			icon: "images/icons/processor.png",
 			name: "Marketing",
-			description: "We offer a comprehensive marketing solution tools and",
+			description:
+				"We offer comprehensive marketing solution tools for NFT artists to make their work seen",
 			readMore: true,
 		},
 		{
 			backgroundImage: img5,
 			icon: "images/icons/library.png",
-			name: "NFT Create",
+			name: "Crypto Market analysis",
 			description:
-				"This feature allows users to create their own unique NFTs easily and",
+				"Comprehensive analytical tools to inform your decisions in the crypto world",
 			readMore: true,
 		},
 		{
@@ -96,7 +100,7 @@ export default class NFTFeatures extends Vue {
 			icon: "images/icons/guard.png",
 			name: "NFT Analysis",
 			description:
-				"This feature allows users to divide their NFTs into smaller fractions",
+				"State-of-the-art analysis algorithms that help find the next big NFT before it blows up. .",
 			readMore: true,
 		},
 	];
@@ -107,7 +111,9 @@ export default class NFTFeatures extends Vue {
 .feature-box {
 	margin: 150px 0px;
 	height: auto;
-
+	@media (max-width: 769px) {
+		margin: 40px 0px;
+	}
 	.list {
 		margin: 70px 0px;
 		display: flex;
@@ -115,11 +121,18 @@ export default class NFTFeatures extends Vue {
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 26px 16px;
+		@media (max-width: 769px) {
+			margin: 40px 0px;
+		}
+
 		.item {
 			flex-basis: 31.5%;
+			@media screen and(max-width: 769px) {
+				flex-basis: auto;
+			}
 			.details {
 				padding: 40px 30px;
-				height: 220px;
+				height: 240px;
 				background-size: cover;
 				background-position: center center;
 				background-repeat: no-repeat;
@@ -127,7 +140,11 @@ export default class NFTFeatures extends Vue {
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
-				gap: 20px;
+				gap: 18px;
+				@media (max-width: 480px) {
+					padding: 25px 30px;
+					height: 230px;
+				}
 				.name {
 					margin: 0;
 					font-weight: 600;
