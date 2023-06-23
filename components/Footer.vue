@@ -25,7 +25,21 @@
 								:href="getSettings.social.facebook"
 								target="_blank"
 								rel="nofollow"
-								><img src="images/socials/twitter.svg" alt="facebook-icon"
+								><img
+									class="social-icon"
+									src="images/socials/facebook.svg"
+									alt="facebook-icon"
+							/></a>
+						</li>
+						<li>
+							<a
+								:href="getSettings.social.twitter"
+								target="_blank"
+								rel="nofollow"
+								><img
+									class="social-icon"
+									src="images/socials/twitter.svg"
+									alt="twitter-icon"
 							/></a>
 						</li>
 						<li>
@@ -33,7 +47,10 @@
 								:href="getSettings.social.linkedin"
 								target="_blank"
 								rel="nofollow"
-								><img src="images/socials/linkedin.svg" alt="linkedin-icon"
+								><img
+									class="social-icon"
+									src="images/socials/linkedin.svg"
+									alt="linkedin-icon"
 							/></a>
 						</li>
 						<li>
@@ -41,15 +58,21 @@
 								:href="getSettings.social.instagram"
 								target="_blank"
 								rel="nofollow"
-								><img src="images/socials/instagram.svg" alt="instagram-icon"
+								><img
+									class="social-icon"
+									src="images/socials/instagram.svg"
+									alt="instagram-icon"
 							/></a>
 						</li>
 						<li>
 							<a
-								:href="getSettings.social.telegram"
+								:href="getSettings.social.discord"
 								target="_blank"
 								rel="nofollow"
-								><img src="images/socials/telegram.svg" alt="telegram-icon"
+								><img
+									class="social-icon"
+									src="images/socials/discord.svg"
+									alt="discord-icon"
 							/></a>
 						</li>
 					</ul>
@@ -75,10 +98,12 @@
 							{{ getSettings.settings.footer_description }}
 						</p>
 						<p v-else class="description">
-							Bifrost is the most versatile and dynamic application on the
-							market which supplies trading analysis tools,market information,
-							fractional and tokenised NFT trading as well as the only fully
-							integratedCrypto - NFT bridging marketplace.
+							Bifrost is an innovative and unique ecosystem that bridges the gap
+							between the NFT and crypto markets. By offering cutting-edge
+							features, empowering NFT artists, and simplifying the NFT
+							experience, the platform aims to unlock the NFT market for a
+							broader audience and capture a significant share of the growing
+							NFT industry.
 						</p>
 					</div>
 					<div
@@ -170,7 +195,7 @@ export default class Footer extends Vue {
 	gap: 8px;
 	form {
 		position: relative;
-		margin-top: 10px;
+		// margin-top: 10px;
 		width: 50%;
 		@media (max-width: 769px) {
 			width: 80%;
@@ -182,14 +207,18 @@ export default class Footer extends Vue {
 			border-radius: 8px;
 			background: none;
 			color: rgba(255, 255, 255, 0.7);
-			@media (max-width: 480px) {
-				padding: 12px 8px;
+			@media (max-width: 769px) {
+				padding: 14px 8px;
+			}
+			&::placeholder {
+				font-size: 12px;
 			}
 		}
 		button {
 			position: absolute;
 			right: 10px;
-			top: 10px;
+			top: 50%;
+			transform: translateY(-50%);
 			padding: 5px 20px;
 			background: linear-gradient(270deg, #ffb401 0%, #dad31b 100%);
 			border: none;
@@ -197,9 +226,6 @@ export default class Footer extends Vue {
 			font-weight: 500;
 			font-size: 14px;
 			color: #ffffff;
-			@media (max-width: 480px) {
-				top: 8px;
-			}
 		}
 	}
 	.community-box {
