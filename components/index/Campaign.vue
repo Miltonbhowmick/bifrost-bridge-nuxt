@@ -14,7 +14,7 @@
 			</div>
 			<div class="ellipse-shape">
 				<div class="get-started-box">
-					<a class="cursor-pointer">Get Started</a>
+					<nuxt-link to="/signup" class="cursor-pointer">Get Started</nuxt-link>
 				</div>
 			</div>
 		</div>

@@ -7,11 +7,11 @@
 			</h2>
 			<h3 class="section-sub-headline">
 				Our platform facilitates the fractionalization process, making it simple
-				and accessible for NFT owners. We handle the technical complexities,
-				such as smart contract
-				<a href="#" class="read-more-link">Read More</a>
+				and accessible for NFT owners. We handle the technical complexities, and
+				you enjoy the rest
+				<a href="#" class="read-more-link text-lowercase">Read More</a>
 			</h3>
-			<h1 class="steps-title">Fractionalized your NFTs</h1>
+			<h1 class="steps-title">Fractionalize your NFTs</h1>
 			<div class="steps">
 				<div
 					v-for="(step, index) in stepList"
