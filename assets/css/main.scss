@@ -172,3 +172,21 @@ ul {
 // 	-o-object-fit: cover;
 // 	object-fit: cover;
 // }
+
+.desc{
+	font-size: 18px;
+	text-align: justify;
+	h2, h3, h4, h5{
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 44px;
+	}
+	ol{
+		li{
+			margin-bottom: 20px;
+		}
+	}
+	p{
+		margin-bottom: 20px;
+	}
+}

@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<Header />
-		<Nuxt />
+		<div class="page-wrapper">
+			<Nuxt />
+		</div>
 		<Footer />
 	</div>
 </template>
@@ -16,4 +18,8 @@ import { Component, Vue } from "nuxt-property-decorator";
 export default class Default extends Vue {}
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.page-wrapper {
+	// margin-top: 100px;
+}
+</style>

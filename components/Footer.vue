@@ -7,13 +7,14 @@
 					Subscribe our newsletter to get more free NFTs information and
 					resources
 				</h3>
-				<form>
+				<form method="POST" @submit.prevent="handleSubscribe">
 					<input
 						type="email"
 						id="email"
 						name="email"
 						placeholder="Enter your email here..."
 						required
+						v-model="email"
 					/>
 					<button type="submit">Submit</button>
 				</form>
@@ -171,10 +172,12 @@
 </template>
 
 <script>
-import { Component, Vue, Getter } from "nuxt-property-decorator";
+import { Component, Vue, Getter, Action } from "nuxt-property-decorator";
+import { SUBSCRIBE } from "../utils/store/action.names";
 import { GET_SETTINGS } from "../utils/store/getter.names";
 import { NS_SETTINGS } from "../utils/store/namespace.names";
 import { namespaced } from "../utils/utils";
+
 @Component({
 	name: "Footer",
 	components: {},
@@ -182,7 +185,23 @@ import { namespaced } from "../utils/utils";
 export default class Footer extends Vue {
 	@Getter(namespaced(NS_SETTINGS, GET_SETTINGS)) getSettings;
 
+	@Action(namespaced(NS_SETTINGS, SUBSCRIBE)) subscribe;
+
+	email = "";
+
 	HOST = this.$config.HOST;
+
+	handleSubscribe() {
+		this.subscribe({ email: this.email })
+			.then((data) => {
+				var msg = `<div class='t-custom-class'><div>Successfully subscribe to our newsletter!</div></div>`;
+				this.$toast.success(msg);
+			})
+			.catch((e) => {
+				var msg = `<div class='t-custom-class'><div>{{ $t('signin_something_went_wrong') }}</div></div>`;
+				this.$toast.error(msg);
+			});
+	}
 }
 </script>
 

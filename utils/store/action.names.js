@@ -13,3 +13,5 @@ export const FORGET_PASSWORD = "forgetPassword";
 export const VERIFY_CODE_FOR_FORGET_PASSWORD = "verifyCodeForForgetPassword";
 
 export const FETCH_SETTINGS = "fetchSettings";
+export const FETCH_CURRENT_PAGE = "fetchCurrentPage";
+export const SUBSCRIBE = "subscribe";

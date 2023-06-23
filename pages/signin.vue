@@ -90,12 +90,12 @@
 							{{ loading ? "Please wait..." : "Sign in" }}
 						</button>
 					</ValidationObserver>
-					<div class="social-continue-border">
+					<!-- <div class="social-continue-border">
 						<div class="border"></div>
 						<div class="text">or continue with</div>
 						<div class="border"></div>
-					</div>
-					<div class="social-links">
+					</div> -->
+					<!-- <div class="social-links">
 						<ul>
 							<li>
 								<a href="#"
@@ -113,7 +113,7 @@
 								/></a>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="go-signup">
 						<span>Don,t have an account?</span
 						><nuxt-link to="/signup">Sign up</nuxt-link>

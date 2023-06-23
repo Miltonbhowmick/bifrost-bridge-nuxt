@@ -268,7 +268,9 @@ export default class ForgetPassword extends Vue {
 				this.loading = false;
 				var msg = `<div class='t-custom-class'><div>Successfully changed your password!</div></div>`;
 				this.$toast.success(msg);
-				this.step = 2;
+				this.$router.push({
+					name: "signin",
+				});
 			})
 			.catch((e) => {
 				this.loading = false;
