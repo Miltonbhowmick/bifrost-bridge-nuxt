@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="faq-wrapper">
 		<div class="accordion" id="accordionExample">
 			<div
 				class="accordion-item"
@@ -52,6 +52,10 @@ export default class FaqBlock extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.faq-wrapper {
+	width: 70%;
+	margin: 0 auto;
+}
 .accordion {
 	width: 100%;
 	.accordion-item {

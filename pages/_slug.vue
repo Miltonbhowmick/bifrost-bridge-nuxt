@@ -1,10 +1,20 @@
 <template>
 	<div class="container">
 		<div class="content">
-			<h1 class="headline">
+			<h1
+				:class="{
+					headline: true,
+					'headline-middle': $route.params.slug == 'faq',
+				}"
+			>
 				{{ getCurrentPage.hero_title }}
 			</h1>
-			<h2 class="subtitle">
+			<h2
+				:class="{
+					subtitle: true,
+					'subtitle-middle': $route.params.slug == 'faq',
+				}"
+			>
 				{{ getCurrentPage.hero_subtitle }}
 			</h2>
 			<div class="content-body">
@@ -101,5 +111,15 @@ export default class CommonPage extends Vue {
 			line-height: 44px;
 		}
 	}
+}
+.headline-middle {
+	text-align: center !important;
+}
+.subtitle-middle {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 50px;
 }
 </style>
