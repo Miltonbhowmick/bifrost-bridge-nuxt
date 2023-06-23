@@ -109,7 +109,9 @@
 										backgroundImage: `url('${item.backgroundImage}')`,
 									}"
 								>
-									<img :src="item.icon" alt="feature-bg" class="feature-icon" />
+									<div class="feature-icon">
+										<img :src="item.icon" alt="feature-bg" />
+									</div>
 									<h6 class="name">{{ item.name }}</h6>
 									<p class="information">
 										{{ item.description }}
@@ -205,9 +207,7 @@ export default class Discover extends Vue {
 		line-height: 46px;
 	}
 	.banner {
-		img {
-			width: 100%;
-		}
+		width: 100%;
 	}
 	.description {
 		margin-top: 40px;

@@ -23,13 +23,9 @@
 						{{ imageItems[0].quotes }}
 					</p>
 					<div class="client">
-						<img
-							:src="imageItems[0].imageSrc"
-							class="profile-image"
-							alt="profile-image"
-							width="40"
-							height="40"
-						/>
+						<div class="profile-image">
+							<img :src="imageItems[0].imageSrc" alt="profile-image" />
+						</div>
 						<div class="info">
 							<h3 class="name">{{ imageItems[0].name }}</h3>
 							<h4 class="position">
@@ -247,7 +243,10 @@ export default class FeedbackHistory extends Vue {
 					justify-content: center;
 				}
 				.profile-image {
-					border-radius: 50%;
+					width: 50px;
+					img {
+						border-radius: 50%;
+					}
 				}
 				.info {
 					.name {

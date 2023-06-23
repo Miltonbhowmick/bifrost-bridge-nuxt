@@ -31,7 +31,9 @@
 							</td>
 							<td class="name">
 								<div class="content">
-									<img src="images/currency/bitcoin.png" alt="" />
+									<div class="coin-image">
+										<img src="images/currency/bitcoin.png" alt="" />
+									</div>
 									<h6>{{ data.name }}</h6>
 									<span class="short text-lowercase">{{ data.name }}</span>
 								</div>
@@ -255,6 +257,9 @@ export default class MarketData extends Vue {
 							flex-direction: row;
 							align-items: center;
 							gap: 10px;
+							.coin-image {
+								width: 10%;
+							}
 						}
 					}
 					.serial {
