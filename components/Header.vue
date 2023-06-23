@@ -33,14 +33,14 @@
 					</li>
 				</ul>
 				<ul class="navbar-nav flex-row gap-4 auth-links">
-					<li class="nav-item">
+					<li class="nav-item" v-if="!getProfile">
 						<nuxt-link
 							to="/signup"
 							class="nav-link cursor-pointer text-capitalize"
 							>Sign Up</nuxt-link
 						>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item" v-if="!getProfile">
 						<nuxt-link
 							to="/signin"
 							class="nav-link cursor-pointer text-capitalize"
@@ -115,8 +115,8 @@
 
 <script>
 import { Component, Vue, Getter, Watch } from "nuxt-property-decorator";
-import { GET_SETTINGS } from "../utils/store/getter.names";
-import { NS_SETTINGS } from "../utils/store/namespace.names";
+import { GET_SETTINGS, GET_PROFILE } from "../utils/store/getter.names";
+import { NS_SETTINGS, NS_USER } from "../utils/store/namespace.names";
 import { namespaced } from "../utils/utils";
 
 @Component({
@@ -125,6 +125,7 @@ import { namespaced } from "../utils/utils";
 })
 export default class Header extends Vue {
 	@Getter(namespaced(NS_SETTINGS, GET_SETTINGS)) getSettings;
+	@Getter(namespaced(NS_USER, GET_PROFILE)) getProfile;
 
 	toggleNavBackground = false;
 	isHomePage = false;

@@ -59,7 +59,7 @@ export default class CommonPage extends Vue {
 
 	head() {
 		return {
-			title: "Home",
+			title: this.$route.params.slug,
 		};
 	}
 
