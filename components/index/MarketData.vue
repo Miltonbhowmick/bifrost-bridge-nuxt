@@ -25,37 +25,37 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr v-for="(data, index) in tableData" :key="index">
 							<td class="serial">
-								<div class="content">#1</div>
+								<div class="content">#{{ index + 1 }}</div>
 							</td>
 							<td class="name">
 								<div class="content">
 									<img src="images/currency/bitcoin.png" alt="" />
-									<h6>Bitcoin</h6>
-									<span class="short">btc</span>
+									<h6>{{ data.name }}</h6>
+									<span class="short text-lowercase">{{ data.name }}</span>
 								</div>
 							</td>
 							<td class="floor-price">
-								<div class="content">$948.55</div>
+								<div class="content">${{ data.floor_price }}</div>
 							</td>
 							<td class="one-hour-percentage">
 								<div class="content">
-									<span class="increase">0.09%</span>
+									<span class="increase">{{ data.hour_1 }}%</span>
 								</div>
 							</td>
 							<td class="twenty-four-hour-percentage">
 								<div class="content">
-									<span class="decrease">0.09%</span>
+									<span class="decrease">{{ data.hour_24 }}%</span>
 								</div>
 							</td>
 							<td class="seven-day-percentage">
 								<div class="content">
-									<span class="increase">0.09%</span>
+									<span class="increase">{{ data.days_7 }}%</span>
 								</div>
 							</td>
 							<td class="volume">
-								<div class="content">$34,235,345,876.00</div>
+								<div class="content">${{ data.volume }}</div>
 							</td>
 							<td class="last-seven-day">
 								<div class="content">graph</div>
@@ -68,7 +68,138 @@
 	</div>
 </template>
 
-<script></script>
+<script>
+import { Component, Vue } from "nuxt-property-decorator";
+
+@Component({
+	name: "MarketData",
+	components: {},
+})
+export default class MarketData extends Vue {
+	tableData = [
+		{
+			name: "Bitcoin",
+			coin_icon: "images/bitcoin.png",
+			floor_price: "948.55",
+			hour_1_status: "increment",
+			hour_1: "0.09",
+			hour_24_status: "increment",
+			hour_24: "0.09",
+			days_7_status: "increment",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "USD Coin",
+			coin_icon: "images/usd_coin.png",
+			floor_price: "328.85",
+			hour_1_status: "decrement",
+			hour_1: "0.09",
+			hour_24_status: "decrement",
+			hour_24: "0.09",
+			days_7_status: "decrement",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "BNB",
+			coin_icon: "images/bnb.png",
+			floor_price: "948.55",
+			hour_1_status: "increment",
+			hour_1: "0.09",
+			hour_24_status: "increment",
+			hour_24: "0.09",
+			days_7_status: "increment",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Dogecoin",
+			coin_icon: "images/dogecoin.png",
+			floor_price: "328.85",
+			hour_1_status: "decrement",
+			hour_1: "0.09",
+			hour_24_status: "decrement",
+			hour_24: "0.09",
+			days_7_status: "decrement",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Polygon",
+			coin_icon: "images/polygon.png",
+			floor_price: "948.55",
+			hour_1_status: "increment",
+			hour_1: "0.09",
+			hour_24_status: "increment",
+			hour_24: "0.09",
+			days_7_status: "increment",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Polkadot",
+			coin_icon: "images/polkadot.png",
+			floor_price: "328.85",
+			hour_1_status: "decrement",
+			hour_1: "0.09",
+			hour_24_status: "decrement",
+			hour_24: "0.09",
+			days_7_status: "decrement",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Avalanche",
+			coin_icon: "images/avalanche.png",
+			floor_price: "948.55",
+			hour_1_status: "increment",
+			hour_1: "0.09",
+			hour_24_status: "increment",
+			hour_24: "0.09",
+			days_7_status: "increment",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Uniswap",
+			coin_icon: "images/uniswap.png",
+			floor_price: "328.85",
+			hour_1_status: "decrement",
+			hour_1: "0.09",
+			hour_24_status: "decrement",
+			hour_24: "0.09",
+			days_7_status: "decrement",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Ethereum_classic",
+			coin_icon: "images/ethereum_classic.png",
+			floor_price: "948.55",
+			hour_1_status: "increment",
+			hour_1: "0.09",
+			hour_24_status: "increment",
+			hour_24: "0.09",
+			days_7_status: "increment",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+		{
+			name: "Uniswap",
+			coin_icon: "images/uniswap.png",
+			floor_price: "328.85",
+			hour_1_status: "decrement",
+			hour_1: "0.09",
+			hour_24_status: "decrement",
+			hour_24: "0.09",
+			days_7_status: "decrement",
+			days_7: "0.09",
+			volume: "34,235,345,876.00",
+		},
+	];
+}
+</script>
 
 <style scoped lang="scss">
 .market-box {

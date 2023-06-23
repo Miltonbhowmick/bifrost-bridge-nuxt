@@ -274,6 +274,7 @@ export default class Footer extends Vue {
 			gap: 20px;
 		}
 		.col {
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -303,18 +304,20 @@ export default class Footer extends Vue {
 				font-weight: 500;
 				font-size: 16px;
 				color: #ffffff;
+				text-align: center;
 			}
 			.link-list {
 				li {
 					margin: 8px 0px;
+					text-align: center;
 					.link {
-						display: flex;
-						align-items: flex-start;
-						justify-content: flex-start;
-						gap: 5px;
 						font-weight: 400;
 						font-size: 14px;
 						color: #ceccd6;
+						@media (max-width: 769px) {
+							width: 100%;
+							text-align: center;
+						}
 						.icon {
 							margin-top: 5px;
 							width: 15px;
@@ -332,5 +335,8 @@ export default class Footer extends Vue {
 	font-size: 16px;
 	text-align: center;
 	color: #9ca3af;
+	@media (max-width: 480px) {
+		font-size: 12px;
+	}
 }
 </style>
