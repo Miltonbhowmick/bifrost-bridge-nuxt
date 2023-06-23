@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="collection-box">
 			<h2 class="section-headline">
-				Top NFT Collections: Exploring the Most Coveted Digital Art and Assets
+				Top NFT Collections: Explore the Most Coveted Digital Art and Assets
 			</h2>
 			<h3 class="section-sub-headline">
 				It's important to conduct thorough research and exercise caution when

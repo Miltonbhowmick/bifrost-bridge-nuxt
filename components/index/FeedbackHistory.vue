@@ -2,13 +2,13 @@
 	<div class="container">
 		<div class="feedback-box">
 			<h2 class="section-headline">
-				Words of Praise: Testimonials from Satisfied NFT Creators, Collectors
-				and Traders
+				Words of Praise: Testimonials from Satisfied Creators, Collectors and
+				Traders
 			</h2>
 			<h3 class="section-sub-headline">
 				We value the trust our customers place in us, and we continuously strive
 				to exceed their expectations. Our testimonial section serves as a
-				testament to our commitment to
+				testament to our commitment.
 			</h3>
 			<div class="client-history">
 				<div class="details">

@@ -170,6 +170,7 @@ export default class Header extends Vue {
 	mounted() {
 		if (this.$route.path === "/") {
 			this.isHomePage = true;
+			this.toggleNavBackground = true;
 		}
 		window.addEventListener("scroll", this.handleNabvar);
 	}
