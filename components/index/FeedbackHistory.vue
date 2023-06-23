@@ -219,7 +219,7 @@ export default class FeedbackHistory extends Vue {
 				}
 			}
 			.quotes {
-				min-height: 180px;
+				min-height: 250px;
 				font-size: $quotes-font-size;
 				font-weight: $quotes-font-weight;
 				color: $quotes-text;
@@ -228,9 +228,9 @@ export default class FeedbackHistory extends Vue {
 					text-align: center;
 				}
 				@media (max-width: 480px) {
+					min-height: 250px;
 					font-size: $mobile-rating-star-size;
 					font-weight: $mobile-quotes-font-size;
-					min-height: unset;
 				}
 			}
 			.client {
@@ -244,11 +244,18 @@ export default class FeedbackHistory extends Vue {
 				}
 				.profile-image {
 					width: 50px;
+					height: 50px;
 					img {
 						border-radius: 50%;
 					}
 				}
 				.info {
+					@media (max-width: 769px) {
+						width: 220px;
+					}
+					@media (max-width: 480px) {
+						width: 175px;
+					}
 					.name {
 						font-weight: 500;
 						font-size: 20px;
