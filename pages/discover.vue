@@ -1,9 +1,9 @@
 <template>
 	<div class="container">
 		<div class="discover below-header-gap">
-			<h1 class="section-headline">
-				Bifrost is a term that holds significance in Norse mythology and in the
-				realm of technology. Let's explore both aspects
+			<h1 class="headline">
+				Unlocking Digital Creativity: A Guide to NFT Minting and Tokenizing
+				Unique Assets
 			</h1>
 			<div class="banner">
 				<img src="images/discover-banner.png" alt="discover-banner" />
@@ -16,42 +16,80 @@
 					or piece of content, such as artwork, collectibles, music, videos, or
 					virtual real estate.
 				</p>
-				<p>The minting process typically involves the following steps:</p>
+				<p>
+					The minting and tokenization process on Bifrost involves the following
+					steps:
+				</p>
 			</div>
 			<ol type="1" class="detail-box">
 				<li>
-					<h2 class="detail">
-						Selecting a Blockchain: NFTs are predominantly minted on blockchain
-						networks that support smart contracts, such as Ethereum, Binance
-						Smart Chain, or Flow. Each blockchain has its own set of features,
-						costs, and community.
-					</h2>
+					<p class="detail">
+						Create an account: Sign up for an account on Bifrost. Provide the
+						necessary details and complete the registration process.
+					</p>
 				</li>
 				<li>
-					<h3 class="detail">
-						Creating the Content: Before minting an NFT, you need to create or
-						have the digital content you want to tokenize. It could be an
-						artwork file, a music track, a video, or any other digital asset
-						that you want to represent as an NFT.
-					</h3>
+					<p class="detail">
+						Prepare your unique asset: Ensure that your unique asset, whether
+						it's digital artwork, music, or any other digital content, meets our
+						specifications. Check the required file format, size, and quality
+						guidelines. Prepare a high-resolution version of your asset for
+						optimal presentation.
+					</p>
 				</li>
 				<li>
-					<h4 class="detail">
-						Choosing a Platform or Marketplace: There are several platforms and
-						marketplaces available for minting and trading NFTs. Some popular
-						platforms include OpenSea, Rarible, SuperRare, and NBA Top Shot. You
-						need to select a platform that is compatible with the blockchain
-						you've chosen.
-					</h4>
+					<p class="detail">
+						Upload your unique asset: Once your account is set up, navigate to
+						the NFT minting section. Locate the option to upload your unique
+						asset and follow the instructions provided. Select the appropriate
+						file from your computer or cloud storage.
+					</p>
 				</li>
 				<li>
-					<h5 class="detail">
-						Setting Metadata and Properties: NFTs typically have associated
-						metadata that provides information about the asset, such as its
-						title, description, image or video link, and other relevant details.
-						You'll need to input this metadata along with any desired properties
-						or attributes of
-					</h5>
+					<p class="detail">
+						Add metadata: Provide relevant metadata for your NFT. This includes
+						a title, description, tags, and any additional information that adds
+						value or context to your unique asset. Consider adding details about
+						the creation process, inspiration, or any special features
+						associated with your artwork.
+					</p>
+				</li>
+				<li>
+					<p class="detail">
+						Set royalties and pricing: Determine the royalty percentage you'd
+						like to receive for secondary sales of your NFT. Additionally, set
+						the initial price for your NFT. Consider factors such as market
+						demand, scarcity, and the perceived value of your unique asset.
+					</p>
+				</li>
+				<li>
+					<p class="detail">
+						Review and mint: Take a final look at the information you provided,
+						including the asset, metadata, and pricing details. Ensure
+						everything is accurate and as desired. Once you're satisfied, click
+						on the mint button or a similar option to finalize the process. This
+						will create a unique token representing your asset on the
+						blockchain.
+					</p>
+				</li>
+				<li>
+					<p class="detail">
+						Tokenize and fractionalize: Select the specific NFT you want to
+						tokenize, determine the number of fractional shares, and set any
+						associated terms or conditions. Follow our on-page guidelines for
+						completing the tokenization and fractionalization process. It has
+						been automated for your convenience and requires minimal input from
+						you.
+					</p>
+				</li>
+				<li>
+					<p class="detail">
+						Promote your NFT: After minting and tokenizing your NFT, it's
+						crucial to promote it to attract potential buyers. Utilize the
+						marketing tools provided by us, share your NFT on social media,
+						engage with NFT communities, and consider collaborations or
+						partnerships to increase visibility.
+					</p>
 				</li>
 			</ol>
 			<div class="slider-box">
@@ -160,6 +198,12 @@ export default class Discover extends Vue {
 </script>
 <style scoped lang="scss">
 .discover {
+	.headline {
+		margin: 30px 0px;
+		font-size: 30px;
+		font-weight: 600;
+		line-height: 46px;
+	}
 	.banner {
 		img {
 			width: 100%;
@@ -179,7 +223,6 @@ export default class Discover extends Vue {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 30px;
 		li {
 			.detail {
 				font-weight: 400;

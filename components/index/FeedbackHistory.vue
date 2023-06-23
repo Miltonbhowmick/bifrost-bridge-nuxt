@@ -242,8 +242,9 @@ export default class FeedbackHistory extends Vue {
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
+				gap: 10px;
 				@media (max-width: 769px) {
-					justify-content: space-evenly;
+					justify-content: center;
 				}
 				.profile-image {
 					border-radius: 50%;
@@ -272,6 +273,9 @@ export default class FeedbackHistory extends Vue {
 					display: flex;
 					flex-direction: row;
 					gap: 10px;
+					@media (max-width: 480px) {
+						gap: 0;
+					}
 					button {
 						margin: 0px 5px;
 						width: 56px;

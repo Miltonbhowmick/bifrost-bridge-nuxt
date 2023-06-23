@@ -24,22 +24,25 @@
 					Unit) architecture developed by the company ARM Holdings. ARM is a
 					British semiconductor and software design company that specializes in
 					the development of processors used in a wide range of devices,
-					including smartphones, tablets, and embedded systems.
+					including smartphones, tablets, and embedded systems
 				</h3>
 				<h4 class="detail">
 					The Bifrost architecture is designed to provide high-performance
 					graphics rendering capabilities for mobile devices. It offers improved
 					efficiency, increased performance, and advanced features for graphics
-					processing. The architecture supports features like advanced shading
-					techniques, virtual reality rendering, and machine learning
-					acceleration, among others. Bifrost-based GPUs are used in many
-					popular smartphones and tablets, delivering enhanced graphics and
-					gaming experiences to users.
+					processing.<br />
+					The architecture supports features like advanced shading techniques,
+					virtual reality rendering, and machine learning acceleration, among
+					others. Bifrost-based PUs are used in many popular smartphones and
+					tablets, delivering enhanced graphics and gaming experiences to users.
 				</h4>
 				<h5 class="detail">
-					It's worth noting that since my knowledge cutoff is in September 2021,
-					there might have been further developments or newer technologies
-					associated with the term "Bifrost" since then.
+					The vision for our Bifrost platform revolves around creating an
+					innovative and unique ecosystem that bridges the gap between the NFT
+					and crypto markets. By offering cutting-edge features, empowering NFT
+					artists, and simplifying the NFT experience, the platform aims to
+					unlock the NFT market for a broader audience and capture a significant
+					share of the growing NFT industry.
 				</h5>
 			</div>
 		</div>
@@ -60,7 +63,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 50px;
+		gap: 30px;
 		.detail {
 			font-weight: 400;
 			font-size: 20px;

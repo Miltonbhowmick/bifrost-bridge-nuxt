@@ -281,5 +281,8 @@ export default class Header extends Vue {
 }
 .none-bg {
 	background: none;
+	@media (max-width: 769px) {
+		background: $header-bg-primary;
+	}
 }
 </style>
