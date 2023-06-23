@@ -225,6 +225,7 @@ export default class Header extends Vue {
 			justify-content: space-between;
 			align-items: center;
 			.hamburger {
+				width: 24px;
 				font-size: 24px;
 			}
 			.menus {
