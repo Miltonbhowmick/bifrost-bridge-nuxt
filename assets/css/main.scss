@@ -164,15 +164,6 @@ ul {
 }
 
 
-// img {
-// 	height: 100%;
-// 	width: 100%;
-// 	flex-shrink: 0;
-// 	-webkit-flex-shrink: 0;
-// 	-o-object-fit: cover;
-// 	object-fit: cover;
-// }
-
 .desc{
 	font-size: 18px;
 	text-align: justify;
@@ -189,4 +180,12 @@ ul {
 	p{
 		margin-bottom: 20px;
 	}
+}
+img {
+	height: 100%;
+	width: 100%;
+	flex-shrink: 0;
+	-webkit-flex-shrink: 0;
+	-o-object-fit: cover;
+	object-fit: cover;
 }

@@ -17,7 +17,9 @@
 							backgroundImage: `url('${item.backgroundImage}')`,
 						}"
 					>
-						<img :src="item.icon" alt="feature-bg" />
+						<div class="feature-icon">
+							<img :src="item.icon" alt="feature-bg" />
+						</div>
 						<h6 class="name">{{ item.name }}</h6>
 						<p class="description">
 							{{ item.description }}<br />
@@ -144,6 +146,9 @@ export default class NFTFeatures extends Vue {
 				@media (max-width: 480px) {
 					padding: 25px 30px;
 					height: 230px;
+				}
+				.feature-icon {
+					width: 10%;
 				}
 				.name {
 					margin: 0;

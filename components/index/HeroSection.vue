@@ -8,6 +8,7 @@
 
 <style scoped lang="scss">
 .hero-section {
+	width: 100%;
 	position: relative;
 	@media (max-width: 769px) {
 		margin-top: 65px;

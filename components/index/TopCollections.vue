@@ -6,8 +6,8 @@
 			</h2>
 			<h3 class="section-sub-headline">
 				It's important to conduct thorough research and exercise caution when
-				making investment decisions in the crypto market.
-				<a href="#" class="read-more-link">Read More</a>
+				making investment decisions in the crypto market
+				<a href="#" class="read-more-link text-lowercase">Read More</a>
 			</h3>
 			<div class="title-box">
 				<h1>Top Collections Over Last 7 days</h1>
@@ -16,13 +16,10 @@
 			<ul class="collection-list">
 				<li v-for="(item, index) in collectionItems" :key="index" class="item">
 					<h5 class="serial">{{ index + 1 }}</h5>
-					<img
-						v-if="item.imageSrc"
-						:src="item.imageSrc"
-						:alt="item.name"
-						class="nft-image"
-					/>
-					<img v-else src="images/dummy.png" :alt="item.name" />
+					<div class="nft-image">
+						<img v-if="item.imageSrc" :src="item.imageSrc" :alt="item.name" />
+						<img v-else src="images/dummy.png" :alt="item.name" />
+					</div>
 					<div class="info">
 						<h6 class="name">{{ item.name }}</h6>
 						<h6 class="price">${{ item.price }}</h6>
@@ -174,7 +171,9 @@ export default class TopCollections extends Vue {
 				}
 			}
 			.nft-image {
-				border-radius: 8px;
+				img {
+					border-radius: 8px;
+				}
 				@media (max-width: 480px) {
 					width: 30%;
 				}

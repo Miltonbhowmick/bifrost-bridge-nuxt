@@ -9,19 +9,27 @@
 					:clickable="false"
 					:controls-visible="true"
 				>
-					<slide v-for="(item, i) in items" :index="i" :key="i">
+					<slide v-for="(item, i) in data.items" :index="i" :key="i">
 						<div class="item">
 							<div
 								class="details"
 								:style="{
-									backgroundImage: `url('${item.backgroundImage}')`,
+									backgroundImage: `url('${
+										HOST + item.background_image.original.src
+									}')`,
 								}"
 							>
-								<img :src="item.icon" alt="feature-bg" class="feature-icon" />
-								<h6 class="name">{{ item.name }}</h6>
+								<div class="feature-icon">
+									<img
+										:src="HOST + item.image.original.src"
+										alt="feature-bg"
+										class="feature-icon"
+									/>
+								</div>
+								<h6 class="name">{{ item.title }}</h6>
 								<p class="information">
-									{{ item.description }}
-									<a v-if="item.readMore" href="#" class="read-more-link"
+									{{ item.subtitle }}<br />
+									<a href="#" class="read-more-link text-capitalize"
 										>read more</a
 									>
 								</p>
@@ -130,10 +138,9 @@ export default class CardSliderBlock extends Vue {
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: center;
-			gap: 10px;
+			gap: 20px;
 			.feature-icon {
-				width: 12%;
-				margin-bottom: 15px;
+				width: 35%;
 			}
 			.name {
 				margin: 0;

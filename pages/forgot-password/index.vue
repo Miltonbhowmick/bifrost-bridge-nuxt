@@ -11,11 +11,9 @@
 			<div class="content">
 				<div class="info">
 					<!-- <h1 class="welcome">Welcome</h1> -->
-					<img
-						class="company-logo"
-						src="images/bifrost_logo.png"
-						alt="bifrost-logo"
-					/>
+					<div class="company-logo">
+						<img src="images/bifrost_logo.png" alt="bifrost-logo" />
+					</div>
 					<h2 class="continue">Forget your password?</h2>
 
 					<ValidationObserver
@@ -153,6 +151,9 @@ export default class ForgetPassword extends Vue {
 				@media (max-width: 769px) {
 					width: 85%;
 					align-items: center;
+				}
+				.company-logo {
+					width: 50%;
 				}
 				// .welcome {
 				// 	font-weight: 600;

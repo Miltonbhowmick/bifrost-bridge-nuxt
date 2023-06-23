@@ -23,13 +23,9 @@
 						{{ imageItems[0].quotes }}
 					</p>
 					<div class="client">
-						<img
-							:src="imageItems[0].imageSrc"
-							class="profile-image"
-							alt="profile-image"
-							width="40"
-							height="40"
-						/>
+						<div class="profile-image">
+							<img :src="imageItems[0].imageSrc" alt="profile-image" />
+						</div>
 						<div class="info">
 							<h3 class="name">{{ imageItems[0].name }}</h3>
 							<h4 class="position">
@@ -223,7 +219,7 @@ export default class FeedbackHistory extends Vue {
 				}
 			}
 			.quotes {
-				min-height: 180px;
+				min-height: 250px;
 				font-size: $quotes-font-size;
 				font-weight: $quotes-font-weight;
 				color: $quotes-text;
@@ -232,9 +228,9 @@ export default class FeedbackHistory extends Vue {
 					text-align: center;
 				}
 				@media (max-width: 480px) {
+					min-height: 250px;
 					font-size: $mobile-rating-star-size;
 					font-weight: $mobile-quotes-font-size;
-					min-height: unset;
 				}
 			}
 			.client {
@@ -247,9 +243,19 @@ export default class FeedbackHistory extends Vue {
 					justify-content: center;
 				}
 				.profile-image {
-					border-radius: 50%;
+					width: 50px;
+					height: 50px;
+					img {
+						border-radius: 50%;
+					}
 				}
 				.info {
+					@media (max-width: 769px) {
+						width: 220px;
+					}
+					@media (max-width: 480px) {
+						width: 175px;
+					}
 					.name {
 						font-weight: 500;
 						font-size: 20px;

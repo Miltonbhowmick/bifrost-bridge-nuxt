@@ -11,11 +11,9 @@
 			<div class="content">
 				<div class="info">
 					<h1 class="welcome">Welcome</h1>
-					<img
-						class="company-logo"
-						src="images/bifrost_logo.png"
-						alt="bifrost-logo"
-					/>
+					<div class="company-logo">
+						<img src="images/bifrost_logo.png" alt="bifrost-logo" />
+					</div>
 					<h2 class="continue">Sign in to continue</h2>
 
 					<ValidationObserver
@@ -236,6 +234,9 @@ export default class Signin extends Vue {
 				@media (max-width: 769px) {
 					width: 85%;
 					align-items: center;
+				}
+				.company-logo {
+					width: 30%;
 				}
 				.welcome {
 					font-weight: 600;

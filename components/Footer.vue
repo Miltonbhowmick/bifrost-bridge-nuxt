@@ -307,7 +307,9 @@ export default class Footer extends Vue {
 			&:first-child {
 				flex-basis: 20%;
 				gap: 20px;
-				align-items: center;
+				@media (max-width: 769px) {
+					align-items: center;
+				}
 			}
 			.company {
 				width: 35%;
