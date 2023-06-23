@@ -74,40 +74,49 @@ export default class FeedbackHistory extends Vue {
 	imageItems = [
 		{
 			name: "Cameron Williamson",
-			position: "Senior analysis",
+			position: "NFT Collector",
 			quotes:
-				"“Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.”",
+				"“I've been using this website for NFT minting, and it has been an absolute game-changer for me as an artist. The process of minting my NFTs is seamless and efficient. And the marketing tools provided have helped me reach a larger audience and gain more exposure for my artwork. I highly recommend this website to any NFT artist looking to take their career to the next level.”",
 			imageSrc: "images/clients/client6.png",
 			className: "box0",
 		},
 		{
 			name: "Adam Roy",
-			position: "Crypto analysis",
+			position: "NFT Enthusiast",
 			quotes:
-				"“Aliqua id asd feig rhoe erogwe orwhr oegme dolore gfe4ypdfadf ut voluptate aute id deserunt nisi.”",
+				"“Finding a platform that offers NFT tokenization and fractionalization services was a game-changer for me as an investor. This website provides an easy and secure way to tokenize and fractionalize NFTs, allowing me to diversify my portfolio and invest in high-value assets. The platform is user-friendly, and the team behind it is incredibly helpful and responsive. I've seen significant returns since I started using this service, and I couldn't be happier with the results.”",
 			imageSrc: "images/clients/client1.png",
 			className: "box1",
 		},
 		{
-			name: "White",
-			position: "Blockchain analysis",
+			name: "Sarah White",
+			position: "NFT Artist",
 			quotes:
-				"“Aliqua id asd feig rhoeadvadg ageg r hrhr id deserunt nisi. etetew wg weg.”",
+				"“As an NFT artist, marketing my work and reaching the right audience has always been a challenge. But thanks to this website's marketing tools, I've been able to showcase my art to a targeted and engaged community. The analytics and insights provided have helped me make data-driven decisions and refine my marketing strategies. I've seen a significant increase in sales and exposure, and I'm grateful for the support and guidance this platform offers.”",
 			imageSrc: "images/clients/client2.png",
 			className: "box2",
 		},
 		{
 			name: "Kine Williamson",
+			position: "Crypto Enthusiast",
+			quotes:
+				"“I've been minting NFTs and trading cryptocurrencies for a while now, and this website has become my go-to platform. The minting process is straightforward and quick, and the trading interface is intuitive and reliable. The analysis tools provided help me make informed trading decisions, and the platform's security measures give me peace of mind. Whether you're new to NFTs or an experienced trader, this website has everything you need to navigate the crypto and NFT market.”",
 			imageSrc: "images/clients/client3.png",
 			className: "box3",
 		},
 		{
 			name: "Andre Flower",
+			position: "NFT Artist",
+			quotes:
+				"“As an NFT collector, I've always been interested in exploring new opportunities in the market. This website's NFT tokenization and fractionalization services have allowed me to diversify my strategy and invest in high-value assets without breaking the bank. The platform is secure, transparent, and easy to use. I appreciate the team's dedication to bringing innovative solutions to the NFT and crypto space, and I've had great success in enriching my collection through this platform.”",
 			imageSrc: "images/clients/client4.png",
 			className: "box4",
 		},
 		{
 			name: "Steve Smith",
+			position: "NFT Investor",
+			quotes:
+				"“I can't express how grateful I am for this website's comprehensive range of services. From NFT minting to trading, marketing tools, and tokenization, it has truly revolutionized the way I approach the NFT and crypto market. The user interface is clean and user-friendly, and the customer support team is incredibly responsive and knowledgeable. Whether you're an artist, investor, or collector, this platform is a must-have in your NFT & crypto toolkit.”",
 			imageSrc: "images/clients/client5.png",
 			className: "box5",
 		},
@@ -218,6 +227,7 @@ export default class FeedbackHistory extends Vue {
 				font-size: $quotes-font-size;
 				font-weight: $quotes-font-weight;
 				color: $quotes-text;
+				text-align: justify;
 				@media screen and(max-width: 769px) {
 					text-align: center;
 				}
