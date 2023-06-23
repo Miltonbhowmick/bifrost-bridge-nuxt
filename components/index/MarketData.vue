@@ -7,8 +7,8 @@
 			</h2>
 			<h3 class="section-sub-headline">
 				It's important to conduct thorough research and exercise caution when
-				making investment decisions in the crypto market.
-				<a href="#" class="read-more-link">Read More</a>
+				making investment decisions in the crypto market
+				<a href="#" class="read-more-link text-lowercase">Read More</a>
 			</h3>
 			<div class="data">
 				<table class="table">
@@ -32,7 +32,7 @@
 							<td class="name">
 								<div class="content">
 									<div class="coin-image">
-										<img src="images/currency/bitcoin.png" alt="" />
+										<img :src="data.coin_icon" :alt="data.name + '-icon'" />
 									</div>
 									<h6>{{ data.name }}</h6>
 									<span class="short text-lowercase">{{ data.name }}</span>
@@ -81,7 +81,7 @@ export default class MarketData extends Vue {
 	tableData = [
 		{
 			name: "Bitcoin",
-			coin_icon: "images/bitcoin.png",
+			coin_icon: "images/currency/bitcoin.png",
 			floor_price: "948.55",
 			hour_1_status: "increment",
 			hour_1: "0.09",
@@ -93,7 +93,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "USD Coin",
-			coin_icon: "images/usd_coin.png",
+			coin_icon: "images/currency/usd_coin.png",
 			floor_price: "328.85",
 			hour_1_status: "decrement",
 			hour_1: "0.09",
@@ -105,7 +105,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "BNB",
-			coin_icon: "images/bnb.png",
+			coin_icon: "images/currency/bnb.png",
 			floor_price: "948.55",
 			hour_1_status: "increment",
 			hour_1: "0.09",
@@ -117,7 +117,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Dogecoin",
-			coin_icon: "images/dogecoin.png",
+			coin_icon: "images/currency/dogecoin.png",
 			floor_price: "328.85",
 			hour_1_status: "decrement",
 			hour_1: "0.09",
@@ -129,7 +129,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Polygon",
-			coin_icon: "images/polygon.png",
+			coin_icon: "images/currency/polygon.png",
 			floor_price: "948.55",
 			hour_1_status: "increment",
 			hour_1: "0.09",
@@ -141,7 +141,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Polkadot",
-			coin_icon: "images/polkadot.png",
+			coin_icon: "images/currency/polkadot.png",
 			floor_price: "328.85",
 			hour_1_status: "decrement",
 			hour_1: "0.09",
@@ -153,7 +153,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Avalanche",
-			coin_icon: "images/avalanche.png",
+			coin_icon: "images/currency/avalanche.png",
 			floor_price: "948.55",
 			hour_1_status: "increment",
 			hour_1: "0.09",
@@ -165,7 +165,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Uniswap",
-			coin_icon: "images/uniswap.png",
+			coin_icon: "images/currency/uniswap.png",
 			floor_price: "328.85",
 			hour_1_status: "decrement",
 			hour_1: "0.09",
@@ -177,7 +177,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Ethereum_classic",
-			coin_icon: "images/ethereum_classic.png",
+			coin_icon: "images/currency/ethereum_classic.png",
 			floor_price: "948.55",
 			hour_1_status: "increment",
 			hour_1: "0.09",
@@ -189,7 +189,7 @@ export default class MarketData extends Vue {
 		},
 		{
 			name: "Uniswap",
-			coin_icon: "images/uniswap.png",
+			coin_icon: "images/currency/uniswap.png",
 			floor_price: "328.85",
 			hour_1_status: "decrement",
 			hour_1: "0.09",

@@ -6,8 +6,8 @@
 			</h2>
 			<h3 class="section-sub-headline">
 				It's important to conduct thorough research and exercise caution when
-				making investment decisions in the crypto market.
-				<a href="#" class="read-more-link">Read More</a>
+				making investment decisions in the crypto market
+				<a href="#" class="read-more-link text-lowercase">Read More</a>
 			</h3>
 			<div class="title-box">
 				<h1>Top Collections Over Last 7 days</h1>
