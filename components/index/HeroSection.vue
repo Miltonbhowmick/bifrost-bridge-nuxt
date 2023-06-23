@@ -1,6 +1,6 @@
 <template>
 	<div class="hero-section">
-		<img src="images/hero-banner-low.png" alt="hero-banner" class="image" />
+		<img src="images/hero-banner-high.png" alt="hero-banner" class="image" />
 	</div>
 </template>
 

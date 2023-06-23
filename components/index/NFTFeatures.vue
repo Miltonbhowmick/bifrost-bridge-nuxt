@@ -102,7 +102,7 @@ export default class NFTFeatures extends Vue {
 			icon: "images/icons/guard.png",
 			name: "NFT Analysis",
 			description:
-				"State-of-the-art analysis algorithms that help find the next big NFT before it blows up. .",
+				"State-of-the-art analysis algorithms that help find the next big NFT before it blows up.",
 			readMore: true,
 		},
 	];
