@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="aboutus below-header-gap">
-			<h1 class="section-headline">
+			<h1 class="headline">
 				Bifrost is a term that holds significance in Norse mythology and in the
 				realm of technology. Let's explore both aspects
 			</h1>
