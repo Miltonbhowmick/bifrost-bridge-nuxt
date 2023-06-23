@@ -251,6 +251,12 @@ export default class Footer extends Vue {
 			justify-content: center;
 			align-items: center;
 			gap: 15px;
+			li {
+				a {
+					width: 100%;
+					height: 100%;
+				}
+			}
 		}
 	}
 }
@@ -270,7 +276,7 @@ export default class Footer extends Vue {
 		gap: 76px;
 		@media (max-width: 769px) {
 			flex-direction: column;
-			align-items: flex-start;
+			align-items: center;
 			gap: 20px;
 		}
 		.col {
@@ -281,14 +287,13 @@ export default class Footer extends Vue {
 			gap: 0px;
 			&:first-child {
 				flex-basis: 20%;
-				gap: 35px;
+				gap: 20px;
+				align-items: center;
 			}
 			.company {
+				width: 35%;
 				@media (max-width: 769px) {
 					text-align: center;
-				}
-				img {
-					width: 35%;
 				}
 			}
 			.description {
@@ -304,20 +309,20 @@ export default class Footer extends Vue {
 				font-weight: 500;
 				font-size: 16px;
 				color: #ffffff;
-				text-align: center;
+				@media (max-width: 769px) {
+					text-align: center;
+				}
 			}
 			.link-list {
 				li {
 					margin: 8px 0px;
-					text-align: center;
+					@media (max-width: 769px) {
+						text-align: center;
+					}
 					.link {
-						font-weight: 400;
+						font-weight: 300;
 						font-size: 14px;
 						color: #ceccd6;
-						@media (max-width: 769px) {
-							width: 100%;
-							text-align: center;
-						}
 						.icon {
 							margin-top: 5px;
 							width: 15px;
