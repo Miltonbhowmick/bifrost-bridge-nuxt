@@ -21,7 +21,7 @@
 							<th class="twenty-four-hour-percentage">24h%</th>
 							<th class="seven-day-percentage">7d%</th>
 							<th class="volume">volume(24h)</th>
-							<th class="last-seven-day">last 7 days</th>
+							<!-- <th class="last-seven-day">last 7 days</th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -59,9 +59,9 @@
 							<td class="volume">
 								<div class="content">${{ data.volume }}</div>
 							</td>
-							<td class="last-seven-day">
-								<div class="content">graph</div>
-							</td>
+							<!-- <td class="last-seven-day"> -->
+							<!-- <div class="content">graph</div> -->
+							<!-- </td> -->
 						</tr>
 					</tbody>
 				</table>
