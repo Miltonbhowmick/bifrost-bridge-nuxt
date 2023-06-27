@@ -136,24 +136,24 @@
 					<div class="col">
 						<h2 class="headline">Bifrost</h2>
 						<ul class="link-list">
-							<li>
+							<li v-if="getSettings.settings.company_number">
 								<a class="link"
 									>Company Number: {{ getSettings.settings.company_number }}</a
 								>
 							</li>
-							<li>
+							<li v-if="getSettings.settings.contact_number">
 								<a class="link">
 									<fa :icon="['fas', 'phone']" class="icon" />
 									{{ getSettings.settings.contact_number }}</a
 								>
 							</li>
-							<li>
+							<li v-if="getSettings.settings.contact_email">
 								<a class="link">
 									<fa :icon="['fas', 'envelope']" class="icon" />
 									{{ getSettings.settings.contact_email }}</a
 								>
 							</li>
-							<li>
+							<li v-if="getSettings.settings.address">
 								<a class="link"
 									><fa :icon="['fas', 'location-dot']" class="icon" />{{
 										getSettings.settings.address

@@ -258,7 +258,12 @@ export default class MarketData extends Vue {
 							align-items: center;
 							gap: 10px;
 							.coin-image {
-								width: 10%;
+								width: 30px;
+								height: 30px;
+								@media (max-width: 480px) {
+									width: 25px;
+									height: 25px;
+								}
 							}
 						}
 					}

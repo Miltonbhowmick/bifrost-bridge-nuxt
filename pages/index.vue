@@ -4,7 +4,7 @@
 		<MarketData />
 		<TopCollections />
 		<NFTFeatures />
-		<FeedbackHistory />
+		<!-- <FeedbackHistory /> -->
 		<Fractionalize />
 		<Campaign />
 		<!-- <Newsletter /> -->
